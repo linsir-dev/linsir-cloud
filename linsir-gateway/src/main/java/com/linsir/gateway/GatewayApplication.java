@@ -14,7 +14,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @description: 网关入口
  * @date 2021/12/26 18:57
  */
-@SpringBootApplication(scanBasePackages="com.linsir")
+@SpringBootApplication
 @EnableDiscoveryClient
 public class GatewayApplication implements CommandLineRunner {
 

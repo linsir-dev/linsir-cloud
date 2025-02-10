@@ -9,6 +9,7 @@
     <modules>
       <module>linsir-gateway</module>
       <module>linsir-saas</module>
+        <module>linsir-auth</module>
     </modules>
 
     <distributionManagement>
