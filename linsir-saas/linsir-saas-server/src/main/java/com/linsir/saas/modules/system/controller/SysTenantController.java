@@ -1,13 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.system.SysTenantDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.Pagination;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.*;
-import com.linsir.logRecord.annotation.OperationLog;
+
 import com.linsir.saas.modules.system.entity.SysTenant;
 import com.linsir.saas.modules.system.entity.SysTenantExtWeb;
 import com.linsir.saas.modules.system.service.SysTenantExtWebService;
@@ -27,7 +21,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/v1/sysTenant/")
-public class SysTenantController extends BaseCrudRestController<SysTenant> {
+public class SysTenantController /*extends BaseCrudRestController<SysTenant>*/ {
 
     @Autowired
     private SysTenantService sysTenantService;
@@ -41,7 +35,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
      *
      * @return
      */
-    @OperationLog(bizId = "'sys_tenant-001'",bizType = "'list'",msg = "'列表查询'")
+    /*@OperationLog(bizId = "'sys_tenant-001'",bizType = "'list'",msg = "'列表查询'")
     @RequestMapping(value = "list",method = {RequestMethod.GET})
     public ResResult list(SysTenantDto sysTenantDto, int page,int pageSize) throws Exception {
         R result = null;
@@ -56,7 +50,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
            return Result.SUCCESS(pageVO);
         });
        return new ResResult<>(result);
-    }
+    }*/
 
 
     /***
@@ -66,7 +60,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
     * @Author: linsir
     * @Date: 2022/9/23 0:55
     */
-    @OperationLog(bizId = "#tenant.tenantCode",bizType = "'add'",msg = "'租户'+ #tenant + '添加'")
+    /*@OperationLog(bizId = "#tenant.tenantCode",bizType = "'add'",msg = "'租户'+ #tenant + '添加'")
     @PostMapping("add")
     public ResResult add(SysTenant tenant) throws Exception {
         R result = null;
@@ -76,7 +70,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
             return Result.SUCCESS();
         });
         return new ResResult<>(result);
-    }
+    }*/
 
     /**
      * @Author linsir
@@ -85,7 +79,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
      * @Param [tenantId]
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
-    @OperationLog(bizId = "#tenantId",bizType = "'del'",msg = "'删除租户'+#tenantId")
+    /*@OperationLog(bizId = "#tenantId",bizType = "'del'",msg = "'删除租户'+#tenantId")
     @DeleteMapping("del")
     public ResResult del(Long tenantId) throws Exception {
         R result = null;
@@ -94,7 +88,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
             return Result.SUCCESS();
         });
         return  new ResResult<>(result);
-    }
+    }*/
 
     /**
      * @Author linsir
@@ -104,7 +98,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
 
-    @OperationLog(bizId = "#sysTenant.id",bizType = "'edit'",msg = "'租户'+ #sysTenant + '修改'")
+    /*@OperationLog(bizId = "#sysTenant.id",bizType = "'edit'",msg = "'租户'+ #sysTenant + '修改'")
     @PostMapping("edit")
     public ResResult edit(SysTenant sysTenant) throws Exception {
         R result = null;
@@ -117,7 +111,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
             }
         });
         return new ResResult(result);
-    }
+    }*/
 
     /**
      * @Author linsir
@@ -126,7 +120,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
      * @Param [sysTenantId]
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
-    @OperationLog(bizId = "#sysTenantId",bizType = "get",msg = "'获取租户信息'")
+   /* @OperationLog(bizId = "#sysTenantId",bizType = "get",msg = "'获取租户信息'")
     @GetMapping("get")
     public ResResult get(Long sysTenantId) throws Exception {
         R result = null;
@@ -135,7 +129,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
             return Result.SUCCESS(sysTenantVO);
         });
            return new ResResult(result);
-    }
+    }*/
 
     /***
     * @Description: 编辑web扩展信息
@@ -144,7 +138,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
     * @Author: linsir
     * @Date: 2022/10/2 9:57
     */
-    @OperationLog(bizId = "#sysTenantId",bizType = "editExtWeb",msg = "'扩展租户的web信息'")
+   /* @OperationLog(bizId = "#sysTenantId",bizType = "editExtWeb",msg = "'扩展租户的web信息'")
     @PostMapping("editExtWeb")
     public ResResult editExtWeb(Long sysTenantId,SysTenantExtWeb sysTenantExtWeb) throws Exception {
         R result = null;
@@ -153,7 +147,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
             return  Result.SUCCESS();
         });
        return  new ResResult(result);
-    }
+    }*/
 
     /**
      * @Author linsir

@@ -1,12 +1,8 @@
 package com.linsir.saas.modules.controller;
 
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.ResResult;
-import com.linsir.file.dto.UploadFileResult;
-import com.linsir.file.entity.UploadFile;
-import com.linsir.file.service.UploadFileService;
+
+import cn.hutool.core.net.multipart.UploadFile;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +21,10 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @RestController
 @RequestMapping("/v1/file/")
-public class FileController extends BaseCrudRestController<UploadFile> {
+public class FileController /*extends BaseCrudRestController<UploadFile>*/ {
 
-    @Autowired
-    private UploadFileService uploadFileService;
+    /*@Autowired
+    private UploadFileService uploadFileService;*/
     /**
      * @Author linsir
      * @Description 上传文件
@@ -36,7 +32,7 @@ public class FileController extends BaseCrudRestController<UploadFile> {
      * @Param [multipartFile]
      * @return com.linsir.core.vo.IResult
      **/
-    @PostMapping("upload")
+    /*@PostMapping("upload")
     public ResResult upload(MultipartFile file) throws Exception {
         R result = null;
         result =exec("上传文件...",()->{
@@ -44,7 +40,7 @@ public class FileController extends BaseCrudRestController<UploadFile> {
            return Result.SUCCESS(uploadFileResult);
         });
         return new ResResult<>(result);
-    }
+    }*/
 
 
 }

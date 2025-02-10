@@ -3,7 +3,7 @@ package com.linsir.saas.modules.organization.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.core.entity.BaseEntity;
+import com.linsir.core.mybatis.entity.BaseEntity;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -18,7 +18,7 @@ import java.util.Date;
  */
 @Data
 @TableName("member")
-public class Member extends BaseEntity {
+public class Member extends BaseEntity<Long> {
     /*姓名*/
     //@FieldSensitive(type = SensitiveType.chineseName)
     private String name;

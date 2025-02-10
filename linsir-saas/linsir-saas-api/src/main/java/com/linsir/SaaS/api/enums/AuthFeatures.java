@@ -1,7 +1,6 @@
 package com.linsir.SaaS.api.enums;
 
 
-import com.linsir.core.enums.IFeatures;
 
 /**
  * @author Administrator
@@ -10,10 +9,10 @@ import com.linsir.core.enums.IFeatures;
  * @description: 权限相关的功能模块枚举
  * @date 2022/2/9 18:44
  */
-public enum AuthFeatures implements IFeatures {
+public enum AuthFeatures {
 
     /*账号*/
-    ACCOUNT_ADD("account:add","账户管理","add","增加账户"),
+   /* ACCOUNT_ADD("account:add","账户管理","add","增加账户"),
     ACCOUNT_DEL("account:del","账户管理","del","删除账户"),
     ACCOUNT_UPDATE("account:update","角色管理","update","跟新账号"),
 
@@ -23,13 +22,13 @@ public enum AuthFeatures implements IFeatures {
     ACCOUNT("account:list","账户管理","list","账户列表"),
 
 
-    /*角色*/
+    *//*角色*//*
     ROLE_ADD("role:add","角色管理","add","增加角色"),
     ROLE_GET("role:get","角色管理","get","获取单个角色"),
     ROLE_UPDATE("role:get","角色管理","update","更新角色"),
     ROLE_QUERY_LIST("role:queryList","角色管理","queryList","角色查询，全部"),
 
-    /*权限*/
+    *//*权限*//*
 
     AUTH_ADD("authority:add","权限管理","add","角色增加"),
     ;
@@ -70,5 +69,5 @@ public enum AuthFeatures implements IFeatures {
     @Override
     public String getDesc() {
         return desc;
-    }
+    }*/
 }

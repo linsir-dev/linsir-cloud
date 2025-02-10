@@ -1,8 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
+
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.system.entity.SysApplication;
 import com.linsir.saas.modules.system.service.impl.SysApplicationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ public class SysApplicationV2Controller extends BaseCrudRestController<SysApplic
      * @return
      * @throws Exception
      */
-    @GetMapping("list")
+    /*@GetMapping("list")
     public R list() throws Exception {
         R result = null;
         result = exec("应用信息列表查询",()->{
@@ -47,7 +46,7 @@ public class SysApplicationV2Controller extends BaseCrudRestController<SysApplic
             return Result.SUCCESS(sysApplicationList);
         });
         return result;
-    }
+    }*/
 
 
     /**
@@ -55,8 +54,8 @@ public class SysApplicationV2Controller extends BaseCrudRestController<SysApplic
      * @param appId
      * @return
      */
-    public R getByAppId(@PathVariable("appId") Long appId)
+    /*public R getByAppId(@PathVariable("appId") Long appId)
     {
         return  null;
-    }
+    }*/
 }

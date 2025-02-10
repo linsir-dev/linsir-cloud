@@ -1,8 +1,9 @@
 package com.linsir.saas.modules.system.service.impl;
 
-import com.linsir.core.code.BaseCode;
-import com.linsir.core.exception.BusinessException;
-import com.linsir.core.service.impl.BaseServiceImpl;
+
+import com.linsir.core.code.ResultCode;
+import com.linsir.core.mybatis.exception.BusinessException;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.system.entity.SysTenantExt;
 import com.linsir.saas.modules.system.entity.SysTenantExtWeb;
 import com.linsir.saas.modules.system.mapper.SysTenantExtWebMapper;
@@ -46,7 +47,7 @@ public class SysTenantExtWebServiceImpl extends BaseServiceImpl<SysTenantExtWebM
             result = true;
         }catch (Exception exception)
         {
-            throw new  BusinessException(BaseCode.WARN_PARTIAL_SUCCESS);
+            throw new BusinessException(ResultCode.WARN_PARTIAL_SUCCESS);
         }
         return result;
     }

@@ -1,7 +1,6 @@
 package com.linsir.saas.modules.system.service;
 
-import com.linsir.core.service.BaseService;
-import com.linsir.core.vo.FilterDataVO;
+import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.saas.modules.system.entity.SysApplication;
 
 import java.util.List;
@@ -15,5 +14,5 @@ import java.util.List;
  */
 public interface SysApplicationService extends BaseService<SysApplication> {
 
-    FilterDataVO convertFilterData(List<SysApplication> applicationList);
+    List<SysApplication> convertFilterData(List<SysApplication> applicationList);
 }

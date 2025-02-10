@@ -2,12 +2,7 @@ package com.linsir.saas.modules.auth.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.auth.UserDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.Pagination;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.*;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.auth.entity.User;
 import com.linsir.saas.modules.auth.service.impl.UserServiceImpl;
 import com.linsir.saas.modules.auth.vo.UserVO;
@@ -39,10 +34,10 @@ public class UserController extends BaseCrudRestController<User> {
      * @return
      * @throws Throwable
      */
-    @PostMapping("add")
+    /*@PostMapping("add")
      public R add(@RequestBody @Validated UserDto user) throws Throwable {
          return null;
-     }
+     }*/
 
     /**
      * 用户列表
@@ -52,7 +47,7 @@ public class UserController extends BaseCrudRestController<User> {
      * @return
      * @throws Exception
      */
-     @GetMapping("list")
+    /* @GetMapping("list")
      public R list(UserDto userDto, @RequestParam(value = "page") int page, @RequestParam(value = "pageSize") int pageSize) throws Exception {
          R result = null;
          QueryWrapper queryWrapper = buildQueryWrapperByDTO(userDto);
@@ -67,7 +62,7 @@ public class UserController extends BaseCrudRestController<User> {
          });
 
          return result;
-     }
+     }*/
 
 
      /** 
@@ -77,7 +72,7 @@ public class UserController extends BaseCrudRestController<User> {
      * @Author: linsir
      * @Date: 12:54 2023/4/11 
      */ 
-     @GetMapping("get/{id}")
+     /*@GetMapping("get/{id}")
      public R get(@PathVariable("id") Long id) throws Exception {
         R result = null;
         result = exec("根据id获取用户信息",()->{
@@ -85,7 +80,7 @@ public class UserController extends BaseCrudRestController<User> {
           return Result.SUCCESS(userVO);
         });
         return  result;
-     }
+     }*/
 
 
     //@Autowired

@@ -1,13 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.system.SysBaseAreaDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.util.BeanUtils;
-import com.linsir.core.vo.Pagination;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.*;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.system.entity.SysBaseArea;
 import com.linsir.saas.modules.system.service.impl.SysBaseAreaServiceImpl;
 import com.linsir.saas.modules.system.vo.SysBaseAreaVO;
@@ -33,7 +27,7 @@ public class SysBaseAreaController extends BaseCrudRestController<SysBaseArea> {
     @Autowired
     private SysBaseAreaServiceImpl sysBaseAreaService;
 
-    @GetMapping("list")
+   /* @GetMapping("list")
     public ResResult list(SysBaseAreaDto sysBaseAreaDto, int page, int pageSize) throws Exception {
 
         R result=null;
@@ -50,7 +44,7 @@ public class SysBaseAreaController extends BaseCrudRestController<SysBaseArea> {
 
         });
         return new ResResult<>(result);
-    }
+    }*/
 
 
     /**
@@ -58,7 +52,7 @@ public class SysBaseAreaController extends BaseCrudRestController<SysBaseArea> {
      * @param
      * @return
      */
-    @GetMapping("labelList")
+    /*@GetMapping("labelList")
     public ResResult labelList(Long countryId,Long parentId) throws Exception {
        R result = null;
        QueryWrapper queryWrapper = new QueryWrapper();
@@ -71,5 +65,5 @@ public class SysBaseAreaController extends BaseCrudRestController<SysBaseArea> {
            return  Result.SUCCESS(sysBaseAreaVOList);
        });
        return new ResResult(result);
-    }
+    }*/
 }

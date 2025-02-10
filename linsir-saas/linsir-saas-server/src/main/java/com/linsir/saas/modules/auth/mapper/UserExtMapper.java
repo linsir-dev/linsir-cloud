@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.auth.mapper;
 
 
-import com.linsir.core.mapper.BaseCrudMapper;
+import com.linsir.core.mybatis.mapper.BaseCrudMapper;
 import com.linsir.saas.modules.auth.entity.UserExt;
 import org.apache.ibatis.annotations.Mapper;
 

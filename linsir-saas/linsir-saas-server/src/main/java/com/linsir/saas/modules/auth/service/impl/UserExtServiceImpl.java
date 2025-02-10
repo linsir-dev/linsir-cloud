@@ -1,10 +1,11 @@
 package com.linsir.saas.modules.auth.service.impl;
 
-import com.linsir.core.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.auth.entity.UserExt;
 import com.linsir.saas.modules.auth.mapper.UserExtMapper;
 import com.linsir.saas.modules.auth.service.UserExtService;
 import org.springframework.stereotype.Service;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
+
 
 /**
  * description:
@@ -19,4 +20,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserExtServiceImpl extends BaseServiceImpl<UserExtMapper,UserExt> implements UserExtService {
+
 }

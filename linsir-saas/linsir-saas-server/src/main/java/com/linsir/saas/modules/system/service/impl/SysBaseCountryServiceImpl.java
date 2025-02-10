@@ -1,9 +1,7 @@
 package com.linsir.saas.modules.system.service.impl;
 
-import com.linsir.cloud.saas.api.enums.Continent;
-import com.linsir.core.service.impl.BaseServiceImpl;
-import com.linsir.core.vo.FilterDataVO;
-import com.linsir.core.vo.Option;
+
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.system.entity.SysBaseCountry;
 import com.linsir.saas.modules.system.mapper.SysBaseCountryMapper;
 import com.linsir.saas.modules.system.service.SysBaseCountryService;
@@ -20,7 +18,7 @@ import java.util.List;
  * @date 2022/08/29 18:45:17
  */
 @Service
-public class SysBaseCountryServiceImpl extends  BaseServiceImpl<SysBaseCountryMapper, SysBaseCountry> implements SysBaseCountryService {
+public class SysBaseCountryServiceImpl extends BaseServiceImpl<SysBaseCountryMapper, SysBaseCountry> implements SysBaseCountryService {
 
     /**
      * 洲分类
@@ -28,8 +26,8 @@ public class SysBaseCountryServiceImpl extends  BaseServiceImpl<SysBaseCountryMa
      * @return
      */
     @Override
-    public FilterDataVO continentList(List<SysBaseCountry> sysBaseCountryList) {
-        FilterDataVO filterDataVO = new FilterDataVO();
+    public List<SysBaseCountry> continentList(List<SysBaseCountry> sysBaseCountryList) {
+        /*List<SysBaseCountry> filterDataVO = new FilterDataVO();
         filterDataVO.setMultiple(true);
         filterDataVO.setKey("type");
         filterDataVO.setTitle("洲分类");
@@ -72,6 +70,7 @@ public class SysBaseCountryServiceImpl extends  BaseServiceImpl<SysBaseCountryMa
 
         });
         filterDataVO.setOptions(optionList);
-        return filterDataVO;
+        return filterDataVO;*/
+        return null;
     }
 }

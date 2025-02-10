@@ -1,8 +1,9 @@
 package com.linsir.saas.modules.auth.vo;
 
-import com.linsir.core.binding.annotation.BindEntity;
-import com.linsir.core.binding.annotation.BindEntityList;
-import com.linsir.core.binding.annotation.BindFieldList;
+
+import com.linsir.core.mybatis.binding.annotation.BindEntity;
+import com.linsir.core.mybatis.binding.annotation.BindEntityList;
+import com.linsir.core.mybatis.binding.annotation.BindFieldList;
 import com.linsir.saas.modules.auth.entity.Role;
 import com.linsir.saas.modules.auth.entity.User;
 import com.linsir.saas.modules.auth.entity.UserExt;

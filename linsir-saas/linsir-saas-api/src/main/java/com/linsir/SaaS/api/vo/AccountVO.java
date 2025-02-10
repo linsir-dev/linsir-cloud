@@ -1,7 +1,6 @@
 package com.linsir.SaaS.api.vo;
 
-import com.linsir.core.binding.annotation.BindDict;
-import com.linsir.core.vo.CommonBaseVO;
+import com.linsir.core.mybatis.binding.annotation.BindDict;
 import lombok.Data;
 
 /**
@@ -11,7 +10,7 @@ import lombok.Data;
  */
 
 @Data
-public class AccountVO extends CommonBaseVO {
+public class AccountVO /*extends CommonBaseVO*/ {
 
     private String account;
 

@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.vo;
 
-import com.linsir.core.binding.annotation.BindEntity;
-import com.linsir.core.binding.annotation.BindField;
+import com.linsir.core.mybatis.binding.annotation.BindEntity;
+import com.linsir.core.mybatis.binding.annotation.BindField;
 import com.linsir.saas.modules.system.entity.SysApplication;
 import com.linsir.saas.modules.system.entity.SysMeta;
 import com.linsir.saas.modules.system.entity.SysResource;

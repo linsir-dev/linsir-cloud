@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.core.entity.AbstractEntity;
+import com.linsir.core.mybatis.entity.BaseEntity;
 import lombok.Data;
 
 /**
@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @TableName("sys_resource")
-public class SysResource extends AbstractEntity<Long> {
+public class SysResource extends BaseEntity<Long> {
 
     private String name;
 

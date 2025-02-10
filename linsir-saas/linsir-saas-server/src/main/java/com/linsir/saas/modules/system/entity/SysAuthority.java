@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.core.entity.BaseEntity;
+import com.linsir.core.mybatis.entity.BaseEntity;
 import lombok.Data;
 
 
@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Data
 @TableName("authority")
-public class SysAuthority extends BaseEntity
+public class SysAuthority extends BaseEntity<Long>
 {
     /*权限因子名称*/
     private String name;

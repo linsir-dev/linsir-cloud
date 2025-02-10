@@ -2,7 +2,7 @@ package com.linsir.saas.modules.system.service.impl;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
-import com.linsir.core.service.impl.BaseServiceImpl;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.system.entity.SysTenant;
 import com.linsir.saas.modules.system.mapper.SysTenantMapper;
 import com.linsir.saas.modules.system.service.SysTenantService;

@@ -1,6 +1,7 @@
 package com.linsir.saas.modules.auth.service.impl;
 
-import com.linsir.core.service.impl.BaseServiceImpl;
+
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.auth.entity.RoleResource;
 import com.linsir.saas.modules.auth.mapper.RoleResourceMapper;
 import com.linsir.saas.modules.auth.service.RoleResourceService;

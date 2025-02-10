@@ -1,8 +1,5 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.linsir.core.controller.BaseController;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
 import com.linsir.saas.modules.system.service.impl.SysResourceServiceImpl;
 import com.linsir.saas.modules.system.vo.MenuVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("v2/menu/")
-public class MenuV2Controller extends BaseController {
+public class MenuV2Controller /*extends BaseController */{
 
-    @Autowired
-    private SysResourceServiceImpl sysResourceService;
+   /* @Autowired
+    private SysResourceServiceImpl sysResourceService;*/
 
     /**
      * 获取菜单
@@ -35,7 +32,7 @@ public class MenuV2Controller extends BaseController {
      * @return
      * @throws Exception
      */
-    @GetMapping("get/{userId}")
+   /* @GetMapping("get/{userId}")
     public R getByUserId(@PathVariable("userId") Long userId) throws Exception {
         R result = null;
         result = exec("根据用户id获取菜单",()->{
@@ -43,7 +40,7 @@ public class MenuV2Controller extends BaseController {
             return Result.SUCCESS(menuVO);
         });
         return  result;
-    }
+    }*/
 
 
 }

@@ -6,7 +6,7 @@ package com.linsir.saas.modules.auth.service;
 import com.linsir.saas.server.entity.auth.AccountRole;
 */
 
-import com.linsir.core.service.BaseService;
+import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.saas.modules.auth.entity.UserRole;
 
 /**

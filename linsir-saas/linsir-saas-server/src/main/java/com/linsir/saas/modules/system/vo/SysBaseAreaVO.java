@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.vo;
 
 
-import com.linsir.core.binding.annotation.BindField;
+import com.linsir.core.mybatis.binding.annotation.BindField;
 import com.linsir.saas.modules.system.entity.SysBaseArea;
 import com.linsir.saas.modules.system.entity.SysBaseCountry;
 import lombok.Data;

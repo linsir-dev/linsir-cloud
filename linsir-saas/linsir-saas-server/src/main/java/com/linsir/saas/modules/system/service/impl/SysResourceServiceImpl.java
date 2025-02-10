@@ -1,10 +1,11 @@
 package com.linsir.saas.modules.system.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.core.binding.Binder;
-import com.linsir.core.service.impl.BaseServiceImpl;
-import com.linsir.core.util.BeanUtils;
-import com.linsir.core.vo.Pagination;
+
+import com.linsir.core.mybatis.binding.Binder;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
+import com.linsir.core.mybatis.util.BeanUtils;
+import com.linsir.core.mybatis.vo.Pagination;
 import com.linsir.saas.modules.system.entity.SysResource;
 import com.linsir.saas.modules.system.mapper.SysResourceMapper;
 import com.linsir.saas.modules.system.service.SysResourceService;

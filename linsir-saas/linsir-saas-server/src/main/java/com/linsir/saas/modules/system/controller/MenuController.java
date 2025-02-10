@@ -1,9 +1,8 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.linsir.core.controller.BaseController;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.ResResult;
+
+import com.linsir.core.mybatis.controller.BaseController;
+import com.linsir.core.results.R;
 import com.linsir.saas.modules.system.service.impl.SysResourceServiceImpl;
 import com.linsir.saas.modules.system.vo.MenuVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +28,8 @@ public class MenuController extends BaseController {
      * 超级管理员 菜单
      * @return
      */
-    @GetMapping("/getByUser")
-    public ResResult getByUser() throws Exception {
+    /*@GetMapping("/getByUser")
+    public R getByUser() throws Exception {
         R result = null;
         result = exec("获取菜单,",()->{
             MenuVO menuVO = sysResourceService.getByUser(1L);
@@ -38,6 +37,6 @@ public class MenuController extends BaseController {
         });
 
         return new ResResult<>(result);
-    }
+    }*/
 
 }

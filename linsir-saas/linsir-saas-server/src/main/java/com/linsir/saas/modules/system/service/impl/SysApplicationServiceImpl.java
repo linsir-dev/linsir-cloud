@@ -1,8 +1,7 @@
 package com.linsir.saas.modules.system.service.impl;
 
-import com.linsir.core.service.impl.BaseServiceImpl;
-import com.linsir.core.vo.FilterDataVO;
-import com.linsir.core.vo.Option;
+
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.system.entity.SysApplication;
 import com.linsir.saas.modules.system.mapper.SysApplicationMapper;
 import com.linsir.saas.modules.system.service.SysApplicationService;
@@ -20,8 +19,12 @@ import java.util.List;
  */
 @Service
 public class SysApplicationServiceImpl extends BaseServiceImpl<SysApplicationMapper, SysApplication> implements SysApplicationService {
-
     @Override
+    public List<SysApplication> convertFilterData(List<SysApplication> applicationList) {
+        return List.of();
+    }
+
+   /* @Override
     public FilterDataVO convertFilterData(List<SysApplication> applicationList) {
         FilterDataVO filterDataVO = new FilterDataVO();
         filterDataVO.setTitle("应用分类");
@@ -38,5 +41,5 @@ public class SysApplicationServiceImpl extends BaseServiceImpl<SysApplicationMap
         filterDataVO.setOptions(optionList);
 
         return filterDataVO;
-    }
+    }*/
 }

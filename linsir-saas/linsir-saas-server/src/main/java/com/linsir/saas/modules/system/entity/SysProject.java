@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.core.entity.AbstractEntity;
+import com.linsir.core.mybatis.entity.BaseEntity;
 import lombok.Data;
 
 /**
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @TableName("sys_project")
-public class SysProject extends AbstractEntity<Long> {
+public class SysProject extends BaseEntity<Long> {
     private String name;
 
     private String link;

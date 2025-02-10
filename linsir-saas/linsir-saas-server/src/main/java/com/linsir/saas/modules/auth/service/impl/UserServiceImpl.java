@@ -1,13 +1,13 @@
 package com.linsir.saas.modules.auth.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.core.binding.Binder;
-import com.linsir.core.service.impl.BaseServiceImpl;
+import com.linsir.core.mybatis.binding.Binder;
 import com.linsir.saas.modules.auth.entity.User;
 import com.linsir.saas.modules.auth.mapper.UserMapper;
 import com.linsir.saas.modules.auth.service.UserService;
 import com.linsir.saas.modules.auth.vo.UserVO;
 import org.springframework.stereotype.Service;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 
 /**
  * description:

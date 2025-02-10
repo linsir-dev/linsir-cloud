@@ -1,16 +1,10 @@
 package com.linsir.saas.modules.system.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.auth.DictionaryDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.entity.Dictionary;
-import com.linsir.core.service.impl.DictionaryServiceExtImpl;
-import com.linsir.core.util.BeanUtils;
-import com.linsir.core.vo.FilterDataVO;
-import com.linsir.core.vo.Pagination;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.*;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
+import com.linsir.core.mybatis.entity.Dictionary;
+import com.linsir.core.mybatis.service.impl.DictionaryServiceExtImpl;
+import com.linsir.core.results.R;
 import com.linsir.saas.modules.system.vo.TypeDictionaryVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,16 +25,16 @@ import java.util.List;
 @RequestMapping("v1/dictionary/")
 public class DictionaryController extends BaseCrudRestController<Dictionary> {
 
-    @Autowired
-    private DictionaryServiceExtImpl dictionaryService;
+    /*@Autowired
+    private DictionaryServiceExtImpl dictionaryService;*/
 
     /**
      * 最高级别的字段列表
      * @return
      */
     @GetMapping("highestList")
-    public ResResult highestList() throws Exception {
-        R result=null;
+    public R highestList() throws Exception {
+       /* R result=null;
         QueryWrapper<Dictionary> dictionaryQueryWrapper = new QueryWrapper<>();
         dictionaryQueryWrapper.eq("parent_id",0);
        result = exec("获取最高级别字典列表",()->{
@@ -51,14 +45,15 @@ public class DictionaryController extends BaseCrudRestController<Dictionary> {
           filterDataVOList.add(filterDataVO);
            return Result.SUCCESS(filterDataVOList);
         });
-        return new ResResult<>(result);
+        return new ResResult<>(result);*/
+        return null;
     }
 
     /**
      * 类型列表
      * @return
      */
-    @GetMapping("typeTree")
+   /* @GetMapping("typeTree")
     public ResResult typeTree() throws Exception {
         R result=null;
         QueryWrapper<Dictionary> dictionaryQueryWrapper = new QueryWrapper<>();
@@ -74,13 +69,13 @@ public class DictionaryController extends BaseCrudRestController<Dictionary> {
             return Result.SUCCESS(typeDictionaryVOList);
         });
         return new ResResult<>(result);
-    }
+    }*/
 
     /**
      * 字段列表
      * @return
      */
-    @GetMapping("list")
+   /* @GetMapping("list")
     public ResResult list(DictionaryDto dictionaryDto,int page,int pageSize) throws Exception {
         R result = null;
         QueryWrapper queryWrapper = buildQueryWrapperByDTO(dictionaryDto);
@@ -96,6 +91,6 @@ public class DictionaryController extends BaseCrudRestController<Dictionary> {
             return Result.SUCCESS(pageVO);
         });
         return new ResResult<>(result);
-    }
+    }*/
 
 }

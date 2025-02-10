@@ -3,11 +3,12 @@ package com.linsir.saas.modules.auth.service.impl;
 /*import com.linsir.common.mp.dto.ParameterDto;
 import com.linsir.common.mp.result.RespResult;
 import com.linsir.common.mp.service.BaseServiceImpl;*/
-import com.linsir.core.service.impl.BaseServiceImpl;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.auth.entity.Role;
 import com.linsir.saas.modules.auth.mapper.RoleMapper;
 import com.linsir.saas.modules.auth.service.RoleService;
 import org.springframework.stereotype.Service;
+
 
 /**
  * @author Administrator

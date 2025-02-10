@@ -1,7 +1,7 @@
 package com.linsir.SaaS.api.dto.system;
 
-import com.linsir.core.binding.query.BindQuery;
-import com.linsir.core.binding.query.Comparison;
+import com.linsir.core.mybatis.binding.query.BindQuery;
+import com.linsir.core.mybatis.binding.query.Comparison;
 import lombok.Data;
 
 /**

@@ -3,6 +3,7 @@ package com.linsir.SaaS.api.dto.auth;
 /*
 import com.linsir.common.mp.dto.CommonBaseDto;
 */
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.util.List;

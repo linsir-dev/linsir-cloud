@@ -1,6 +1,6 @@
 package com.linsir.saas.modules.system.vo;
 
-import com.linsir.core.entity.Dictionary;
+import com.linsir.core.mybatis.entity.Dictionary;
 import lombok.Data;
 
 import java.util.List;

@@ -1,7 +1,6 @@
 package com.linsir.saas.modules.system.service;
 
-import com.linsir.core.service.BaseService;
-import com.linsir.core.vo.FilterDataVO;
+import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.saas.modules.system.entity.SysBaseCountry;
 
 import java.util.List;
@@ -16,5 +15,5 @@ import java.util.List;
 
 public interface SysBaseCountryService extends BaseService<SysBaseCountry> {
 
-   FilterDataVO continentList(List<SysBaseCountry> sysBaseCountryList);
+   List<SysBaseCountry> continentList(List<SysBaseCountry> sysBaseCountryList);
 }

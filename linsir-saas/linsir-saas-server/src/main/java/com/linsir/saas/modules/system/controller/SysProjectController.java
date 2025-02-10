@@ -1,9 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.system.SysProjectDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.jsonResults.JsonResult;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.system.entity.SysProject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,7 +26,7 @@ public class SysProjectController extends BaseCrudRestController<SysProject> {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "list",method = {RequestMethod.GET})
+    /*@RequestMapping(value = "list",method = {RequestMethod.GET})
     public JsonResult<List<SysProject>> list(String type) throws Exception {
         SysProjectDto sysProjectDto = new SysProjectDto();
         sysProjectDto.setType(type);
@@ -38,5 +36,5 @@ public class SysProjectController extends BaseCrudRestController<SysProject> {
              return getEntityList(queryWrapper);
         });
          return jsonResult;
-    }
+    }*/
 }

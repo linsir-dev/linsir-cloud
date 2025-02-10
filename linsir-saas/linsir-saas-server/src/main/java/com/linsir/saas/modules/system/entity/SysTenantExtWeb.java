@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.core.entity.AbstractEntity;
+import com.linsir.core.mybatis.entity.BaseEntity;
 import lombok.Data;
 
 /**
@@ -16,7 +16,7 @@ import lombok.Data;
  */
 @Data
 @TableName("sys_tanant_ext_web")
-public class SysTenantExtWeb extends AbstractEntity<Long> {
+public class SysTenantExtWeb extends BaseEntity<Long> {
 
     /*租户标题*/
     private String title;

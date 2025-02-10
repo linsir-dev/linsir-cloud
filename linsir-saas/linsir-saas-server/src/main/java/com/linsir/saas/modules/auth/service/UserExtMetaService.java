@@ -1,6 +1,6 @@
 package com.linsir.saas.modules.auth.service;
 
-import com.linsir.core.service.BaseService;
+import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.saas.modules.auth.entity.UserExtMeta;
 
 /**

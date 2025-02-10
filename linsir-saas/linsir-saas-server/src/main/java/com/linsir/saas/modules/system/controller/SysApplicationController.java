@@ -1,13 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.system.SysApplicationDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.FilterDataVO;
-import com.linsir.core.vo.Pagination;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.*;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.system.entity.SysApplication;
 import com.linsir.saas.modules.system.service.impl.SysApplicationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +33,7 @@ public class SysApplicationController extends BaseCrudRestController<SysApplicat
      * @param pageSize
      * @return
      */
-    @GetMapping("list")
+    /*@GetMapping("list")
     public ResResult list(SysApplicationDto sysApplicationDto, int page , int pageSize) throws Exception {
         R result = null;
         QueryWrapper queryWrapper = buildQueryWrapperByDTO(sysApplicationDto);
@@ -52,13 +46,13 @@ public class SysApplicationController extends BaseCrudRestController<SysApplicat
             return Result.SUCCESS(pageVO);
         });
         return new ResResult<>(result);
-    }
+    }*/
 
     /**
      *
      * @return
      */
-    @GetMapping("sortList")
+   /* @GetMapping("sortList")
     public ResResult sortList() throws Exception {
         R result = null;
         QueryWrapper<SysApplication> sysApplicationQueryWrapper = new QueryWrapper<>();
@@ -70,5 +64,5 @@ public class SysApplicationController extends BaseCrudRestController<SysApplicat
             return Result.SUCCESS(filterDataVOList);
         });
         return new ResResult<>(result);
-    }
+    }*/
 }

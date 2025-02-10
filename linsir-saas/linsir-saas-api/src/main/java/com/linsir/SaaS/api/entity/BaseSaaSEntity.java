@@ -1,6 +1,6 @@
 package com.linsir.SaaS.api.entity;
 
-import com.linsir.core.entity.BaseEntity;
+import com.linsir.core.mybatis.entity.BaseEntity;
 import lombok.Data;
 
 /**

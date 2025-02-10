@@ -3,7 +3,7 @@ package com.linsir.saas.modules.auth.service;
 
 //import com.linsir.common.mp.dto.ParameterDto;
 
-import com.linsir.core.service.BaseService;
+import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.saas.modules.auth.entity.Role;
 
 /**

@@ -2,7 +2,7 @@ package com.linsir.saas.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.linsir.core.entity.AbstractEntity;
+import com.linsir.core.mybatis.entity.BaseEntity;
 import lombok.Data;
 
 /**
@@ -15,7 +15,7 @@ import lombok.Data;
  */
 @Data
 @TableName("sys_tenant")
-public class SysTenant extends AbstractEntity<Long> {
+public class SysTenant extends BaseEntity<Long> {
 
     /*租户编码*/
     private String tenantCode;

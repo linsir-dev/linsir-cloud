@@ -1,12 +1,7 @@
 package com.linsir.saas.modules.auth.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.auth.RoleDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.Pagination;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.*;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.auth.entity.Role;
 import com.linsir.saas.modules.auth.service.impl.RoleServiceImpl;
 import com.linsir.saas.modules.auth.vo.RoleVO;
@@ -32,7 +27,7 @@ public class RoleController extends BaseCrudRestController<Role> {
     @Autowired
     private RoleServiceImpl roleService;
 
-    @GetMapping("list")
+    /*@GetMapping("list")
     public ResResult list(RoleDto roleDto,int page,int pageSize) throws Exception {
         R result = null;
         QueryWrapper queryWrapper = buildQueryWrapperByDTO(roleDto);
@@ -48,5 +43,5 @@ public class RoleController extends BaseCrudRestController<Role> {
         });
 
         return new ResResult<>(result);
-    }
+    }*/
 }

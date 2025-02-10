@@ -1,6 +1,6 @@
 package com.linsir.saas.modules.system.service.impl;
 
-import com.linsir.core.service.impl.BaseServiceImpl;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.saas.modules.system.entity.SysTenantExtBusiness;
 import com.linsir.saas.modules.system.mapper.SysTenantExtBusinessMapper;
 import com.linsir.saas.modules.system.service.SysTenantExtBusinessService;

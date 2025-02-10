@@ -1,8 +1,8 @@
 package com.linsir.saas.modules.system.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.core.service.BaseService;
-import com.linsir.core.vo.Pagination;
+import com.linsir.core.mybatis.service.BaseService;
+import com.linsir.core.mybatis.vo.Pagination;
 import com.linsir.saas.modules.system.entity.SysResource;
 import com.linsir.saas.modules.system.vo.MenuVO;
 import com.linsir.saas.modules.system.vo.SysResourceVO;

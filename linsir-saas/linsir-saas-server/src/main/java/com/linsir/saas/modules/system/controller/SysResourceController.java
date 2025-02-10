@@ -1,12 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.cloud.saas.api.dto.system.SysResourceDto;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.Pagination;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.*;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.system.entity.SysResource;
 import com.linsir.saas.modules.system.service.impl.SysResourceServiceImpl;
 import com.linsir.saas.modules.system.vo.SysResourceVO;
@@ -29,7 +24,7 @@ import java.util.List;
 @RequestMapping("v1/sysResource/")
 public class SysResourceController extends BaseCrudRestController<SysResource> {
 
-    @Autowired
+   /* @Autowired
     private SysResourceServiceImpl sysResourceService;
 
     @GetMapping("list")
@@ -48,5 +43,5 @@ public class SysResourceController extends BaseCrudRestController<SysResource> {
             return  Result.SUCCESS(pageVO);
         });
         return new ResResult<>(result);
-    }
+    }*/
 }

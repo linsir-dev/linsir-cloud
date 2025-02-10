@@ -1,10 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.util.BeanUtils;
-import com.linsir.core.vo.R;
-import com.linsir.core.vo.Result;
-import com.linsir.core.vo.jsonResults.ResResult;
+
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.system.entity.SysArea;
 import com.linsir.saas.modules.system.service.impl.SysAreaServiceImpl;
 import com.linsir.saas.modules.system.vo.SysAreaVO;
@@ -36,7 +33,7 @@ public class SysAreaController extends BaseCrudRestController<SysArea> {
      * @return
      * @throws Exception
      */
-    @GetMapping("sysAreaTree")
+   /* @GetMapping("sysAreaTree")
     public ResResult sysAreaTree(Long parentId) throws Exception {
         R result = null;
         result = exec("获取区域列表",()->{
@@ -46,5 +43,5 @@ public class SysAreaController extends BaseCrudRestController<SysArea> {
             return Result.SUCCESS(sysAreaVoList);
         });
         return new ResResult<>(result);
-    }
+    }*/
 }

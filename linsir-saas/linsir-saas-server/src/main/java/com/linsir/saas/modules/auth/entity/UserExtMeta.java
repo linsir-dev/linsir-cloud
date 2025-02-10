@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.auth.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.core.entity.AbstractEntity;
+import com.linsir.core.mybatis.entity.AbstractEntity;
 import lombok.Data;
 
 /**

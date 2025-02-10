@@ -1,8 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.linsir.cloud.saas.api.vo.MockTokenVO;
-import com.linsir.cloud.saas.api.vo.MockUserInfoVO;
-import com.linsir.core.vo.MockResult;
+import com.linsir.SaaS.api.vo.MockTokenVO;
+import com.linsir.SaaS.api.vo.MockUserInfoVO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -19,7 +18,7 @@ import java.util.Map;
 public class MockController  {
 
 
-    @PostMapping("token")
+   /* @PostMapping("token")
     public MockResult<MockTokenVO> token(@RequestBody Map<String,Object> map)
     {
         MockTokenVO mockTokenVO = new MockTokenVO();
@@ -34,7 +33,7 @@ public class MockController  {
         mockUserInfoVO.setRole(role);
         mockTokenVO.setMessage("");
         return new MockResult<MockTokenVO>(mockTokenVO);
-    }
+    }*/
 
 
     @GetMapping("menu")

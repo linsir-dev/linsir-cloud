@@ -1,9 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.core.controller.BaseCrudRestController;
-import com.linsir.core.vo.*;
-import com.linsir.core.vo.jsonResults.*;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.saas.modules.system.entity.SysBaseCountry;
 import com.linsir.saas.modules.system.service.impl.SysBaseCountryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +32,7 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
      * @return
      * @throws Exception
      */
-    @GetMapping("continentList")
+    /*@GetMapping("continentList")
     public ResResult continentList() throws Exception {
         R result = null;
         QueryWrapper<SysBaseCountry> sysBaseCountryQueryWrapper = new QueryWrapper<>();
@@ -47,7 +45,7 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
             return Result.SUCCESS(filterDataVOList);
         });
         return new ResResult<>(result);
-    }
+    }*/
 
 
     /**
@@ -57,7 +55,7 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
      * @Param []
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
-    @GetMapping("continentLable")
+    /*@GetMapping("continentLable")
     public ResResult continentLable() throws Exception {
         R result = null;
         QueryWrapper<SysBaseCountry> sysBaseCountryQueryWrapper = new QueryWrapper<>();
@@ -68,12 +66,12 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
             return Result.SUCCESS(filterDataVO.getOptions());
         });
         return new ResResult<>(result);
-    }
+    }*/
 
     /**
      * 国家列表
      */
-    @GetMapping("list")
+    /*@GetMapping("list")
     public ResResult list(int page, int pageSize) throws Exception {
         R result=null;
         QueryWrapper queryWrapper = new QueryWrapper();
@@ -88,7 +86,7 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
 
         });
         return new ResResult<>(result);
-    }
+    }*/
 
     /**
      * @Author linsir
@@ -97,7 +95,7 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
      * @Param [continentId]
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
-    @GetMapping("getListByContinent")
+    /*@GetMapping("getListByContinent")
     public ResResult getListByContinent() throws Exception {
         R result = null;
         result=exec("根据洲的id获取国家",()->{
@@ -112,7 +110,7 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
             return Result.SUCCESS(optionList);
         });
         return  new ResResult(result);
-    }
+    }*/
 
     /**
      * @Author linsir
@@ -121,7 +119,7 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
      * @Param []
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
-    @GetMapping("lableList")
+    /*@GetMapping("lableList")
     public  ResResult lableList() throws Exception {
         R result = null;
         result = exec("获取国家下来列表",()->{
@@ -133,5 +131,5 @@ public class SysBaseCountryController extends BaseCrudRestController<SysBaseCoun
           return Result.SUCCESS(labelValueList);
         });
         return new ResResult(result);
-    }
+    }*/
 }
