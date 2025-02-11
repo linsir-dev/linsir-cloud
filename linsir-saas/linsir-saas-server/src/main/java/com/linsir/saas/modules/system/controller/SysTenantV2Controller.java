@@ -4,6 +4,7 @@ package com.linsir.saas.modules.system.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.linsir.SaaS.api.dto.system.SysTenantDto;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;
+import com.linsir.core.mybatis.vo.JsonResult;
 import com.linsir.core.mybatis.vo.Pagination;
 import com.linsir.core.results.R;
 import com.linsir.saas.modules.system.entity.SysTenant;
@@ -114,6 +115,19 @@ public class SysTenantV2Controller extends BaseCrudRestController<SysTenant> {
         });
         return result;
     }*/
+
+    /**
+     *  通过id
+     * @param id
+     * @return
+     */
+    @GetMapping("get/{id}")
+    public R get(@PathVariable("id") Long id){
+        return exec(1,()->{
+            return JsonResult.OK(getEntity(id));
+        });
+    }
+
 
 
     /**

@@ -1,6 +1,7 @@
 package com.linsir.saas.config;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages={"com.linsir.saas.modules.*.mapper"})
+@ComponentScan(basePackages = "com.linsir")
+@MapperScan(basePackages={"com.linsir.saas.modules.*.mapper","com.linsir.core.mybatis.mapper"})
 public class SpringMvcConfig {
 }
