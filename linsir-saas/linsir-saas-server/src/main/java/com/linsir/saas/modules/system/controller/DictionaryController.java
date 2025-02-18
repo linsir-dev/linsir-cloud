@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022/08/29 19:15:21
  */
 @RestController
-@RequestMapping("v1/dictionary/")
+@RequestMapping("/dictionary/")
 public class DictionaryController extends BaseCrudRestController<Dictionary> {
 
     /*@Autowired

@@ -6,6 +6,7 @@ import com.linsir.SaaS.modules.system.entity.SysApplication;
 import com.linsir.SaaS.modules.system.entity.SysMeta;
 import com.linsir.SaaS.modules.system.entity.SysResource;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * @date 2022/08/31 18:46:41
  */
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class SysResourceVO extends SysResource {
 

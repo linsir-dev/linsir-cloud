@@ -2,6 +2,7 @@ package com.linsir.SaaS.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.linsir.core.mybatis.entity.BaseEntity;
+import com.linsir.core.mybatis.entity.BaseTreeEntity;
 import lombok.Data;
 
 /**
@@ -14,7 +15,7 @@ import lombok.Data;
 
 @Data
 @TableName("sys_resource")
-public class SysResource extends BaseEntity<Long> {
+public class SysResource extends BaseTreeEntity<Long> {
 
     private String name;
 
@@ -25,8 +26,6 @@ public class SysResource extends BaseEntity<Long> {
     private Long metaId;
 
     private String type;
-
-    private Long parentId;
 
     private String component;
 
