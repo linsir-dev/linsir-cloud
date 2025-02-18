@@ -1,5 +1,6 @@
 package com.linsir.saas.modules.system.service;
 
+import com.linsir.SaaS.modules.system.entity.SysTenantExtWeb;
 import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.SaaS.modules.system.entity.SysTenantExtBusiness;
 
@@ -11,4 +12,6 @@ import com.linsir.SaaS.modules.system.entity.SysTenantExtBusiness;
  * @version:
  */
 public interface SysTenantExtBusinessService extends BaseService<SysTenantExtBusiness> {
+
+    boolean createEntity(Long tenantId , SysTenantExtBusiness sysTenantExtBusiness);
 }

@@ -23,9 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class SysTenantExtWebServiceImpl extends BaseServiceImpl<SysTenantExtWebMapper,SysTenantExtWeb> implements SysTenantExtWebService{
 
-
-
-
     @Autowired
     private SysTenantExtService sysTenantExtService;
 
@@ -33,6 +30,7 @@ public class SysTenantExtWebServiceImpl extends BaseServiceImpl<SysTenantExtWebM
      *  基于租户id创建扩展
      * @return
      */
+    @Override
     @Transactional(rollbackFor = BusinessException.class)
     public boolean createEntity(Long tenantId , SysTenantExtWeb sysTenantExtWeb)
     {
