@@ -79,7 +79,7 @@ public class SysTenantController extends BaseCrudRestController<SysTenant> {
      * @Date: 2:54 2023/4/22
      */
     @DeleteMapping("del/{id}")
-    public R del(@PathVariable("id") Long id) throws Exception {
+    public R del(@PathVariable("id") Long id)  {
         return exec(TypeConstant.LOG_TYPE_6,()->{
            return deleteEntity(id);
         });

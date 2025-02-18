@@ -1,11 +1,16 @@
 package com.linsir.saas.modules.system.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.linsir.SaaS.modules.system.entity.SysTenant;
+import com.linsir.core.constant.TypeConstant;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.SaaS.modules.system.entity.SysApplication;
+import com.linsir.core.mybatis.vo.JsonResult;
+import com.linsir.core.mybatis.vo.Pagination;
+import com.linsir.core.results.R;
 import com.linsir.saas.modules.system.service.impl.SysApplicationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author ：linsir
@@ -15,49 +20,54 @@ import org.springframework.web.bind.annotation.RestController;
  * @version: 0.0.1
  */
 @RestController
-@RequestMapping("/v1/sysApplication/")
+@RequestMapping("/sysApplication/")
 public class SysApplicationController extends BaseCrudRestController<SysApplication> {
 
     @Autowired
     private SysApplicationServiceImpl sysApplicationService;
 
-    /**
-     * 列表
-     * @param sysApplicationDto
-     * @param page
-     * @param pageSize
-     * @return
-     */
-    /*@GetMapping("list")
-    public ResResult list(SysApplicationDto sysApplicationDto, int page , int pageSize) throws Exception {
-        R result = null;
-        QueryWrapper queryWrapper = buildQueryWrapperByDTO(sysApplicationDto);
-        Pagination pagination = new Pagination(SysApplication.class);
-        pagination.setPageIndex(page);
-        pagination.setPageSize(pageSize);
-        result = exec("应用信息列表查询",()->{
-            List<SysApplication> sysTenantList = sysApplicationService.getViewObjectList(queryWrapper,pagination,SysApplication.class);
-            PageVO<SysApplication, Summary> pageVO = new PageVO<>(pagination,sysTenantList);
-            return Result.SUCCESS(pageVO);
+    @PostMapping("add")
+    public R add(@RequestBody SysApplication sysApplication) {
+        return exec(TypeConstant.LOG_TYPE_4,()->{
+            return createEntity(sysApplication);
         });
-        return new ResResult<>(result);
-    }*/
+    }
 
-    /**
-     *
-     * @return
-     */
-   /* @GetMapping("sortList")
-    public ResResult sortList() throws Exception {
-        R result = null;
-        QueryWrapper<SysApplication> sysApplicationQueryWrapper = new QueryWrapper<>();
-        result = exec("国家分类",()->{
-            List<SysApplication> sysApplicationList = sysApplicationService.getEntityList(sysApplicationQueryWrapper);
-            FilterDataVO filterDataVO = sysApplicationService.convertFilterData(sysApplicationList);
-            List<FilterDataVO> filterDataVOList = new ArrayList<>();
-            filterDataVOList.add(filterDataVO);
-            return Result.SUCCESS(filterDataVOList);
+
+    @DeleteMapping("del/{id}")
+    public R del(@PathVariable("id") Long id)  {
+        return exec(TypeConstant.LOG_TYPE_6,()->{
+            return deleteEntity(id);
         });
-        return new ResResult<>(result);
-    }*/
+    }
+
+    @PostMapping("update")
+    public R update(@RequestBody SysApplication sysApplication) {
+        return exec(TypeConstant.LOG_TYPE_5,()->{
+            return updateEntity(sysApplication.getId(),sysApplication);
+        });
+    }
+
+
+    @GetMapping("get/{id}")
+    public R get(@PathVariable("id") Long id )
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            return JsonResult.OK(getEntity(id));
+        });
+    }
+
+
+    @GetMapping("list")
+    public R list(SysApplication sysApplication, @RequestParam(value = "page") int page, @RequestParam(value = "pageSize") int pageSize)
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            QueryWrapper<SysApplication> sysTenantQueryWrapper = buildQueryWrapperByDTO(sysApplication);
+            Pagination pagination  = new Pagination();
+            pagination.setPageIndex(page);
+            pagination.setPageSize(pageSize);
+            return getEntityListWithPaging(sysTenantQueryWrapper, pagination);
+        });
+    }
+
 }

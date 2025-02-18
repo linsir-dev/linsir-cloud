@@ -45,7 +45,7 @@ public class SysTenantExtWebController extends BaseCrudRestController<SysTenantE
     }
 
     @DeleteMapping("del/{id}")
-    public R del(@PathVariable("id") Long id) throws Exception {
+    public R del(@PathVariable("id") Long id) {
         return exec(TypeConstant.LOG_TYPE_6,()->{
             return deleteEntity(id);
         });
