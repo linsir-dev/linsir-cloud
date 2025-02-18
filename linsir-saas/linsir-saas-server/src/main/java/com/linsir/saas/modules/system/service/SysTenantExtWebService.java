@@ -12,5 +12,5 @@ import com.linsir.SaaS.modules.system.entity.SysTenantExtWeb;
  */
 public interface SysTenantExtWebService extends BaseService<SysTenantExtWeb> {
 
-    boolean editExtWeb(Long sysTenantId,SysTenantExtWeb sysTenantExtWeb);
+     boolean createEntity(Long tenantId , SysTenantExtWeb sysTenantExtWeb);
 }

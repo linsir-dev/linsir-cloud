@@ -23,32 +23,34 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class SysTenantExtWebServiceImpl extends BaseServiceImpl<SysTenantExtWebMapper,SysTenantExtWeb> implements SysTenantExtWebService{
 
+
+
+
     @Autowired
     private SysTenantExtService sysTenantExtService;
 
-    /***
-    * @Description: 增加web扩展信息
-    * @Param: [sysTenantId, sysTenantExtWeb]
-    * @return: boolean
-    * @Author: linsir
-    * @Date: 2022/10/2 10:40
-    */
-    @Transactional
-    @Override
-    public boolean editExtWeb(Long sysTenantId, SysTenantExtWeb sysTenantExtWeb) {
+    /**
+     *  基于租户id创建扩展
+     * @return
+     */
+    @Transactional(rollbackFor = BusinessException.class)
+    public boolean createEntity(Long tenantId , SysTenantExtWeb sysTenantExtWeb)
+    {
         boolean result = false;
         try {
-            createOrUpdateEntity(sysTenantExtWeb);
-            Long extId = sysTenantExtWeb.getId();
-            SysTenantExt sysTenantExt = new SysTenantExt();
-            sysTenantExt.setTenantId(sysTenantId);
-            sysTenantExt.setExtId(extId);
-            sysTenantExtService.createEntity(sysTenantExt);
-            result = true;
-        }catch (Exception exception)
+            if (super.createEntity(sysTenantExtWeb))
+            {
+                SysTenantExt sysTenantExt = new SysTenantExt();
+                sysTenantExt.setTenantId(tenantId);
+                sysTenantExt.setExtId(sysTenantExtWeb.getId());
+                sysTenantExt.setType("web");
+                result = sysTenantExtService.createEntity(sysTenantExt);
+            }
+        }catch (Exception ex)
         {
-            throw new BusinessException(ResultCode.WARN_PARTIAL_SUCCESS);
+            throw new BusinessException(ResultCode.FAIL_OPERATION,ex);
         }
-        return result;
+       return result;
     }
+
 }
