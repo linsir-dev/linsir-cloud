@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.service.impl;
 
 import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
-import com.linsir.saas.modules.system.entity.SysTenantExtBusiness;
+import com.linsir.SaaS.modules.system.entity.SysTenantExtBusiness;
 import com.linsir.saas.modules.system.mapper.SysTenantExtBusinessMapper;
 import com.linsir.saas.modules.system.service.SysTenantExtBusinessService;
 import org.springframework.stereotype.Service;

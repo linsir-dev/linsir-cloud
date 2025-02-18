@@ -1,22 +1,14 @@
 package com.linsir.saas.modules.system.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.SaaS.api.dto.system.SysTenantDto;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.core.mybatis.vo.JsonResult;
-import com.linsir.core.mybatis.vo.Pagination;
 import com.linsir.core.results.R;
-import com.linsir.saas.modules.system.entity.SysTenant;
-import com.linsir.saas.modules.system.entity.SysTenantExtWeb;
+import com.linsir.SaaS.modules.system.entity.SysTenant;
 import com.linsir.saas.modules.system.service.SysTenantExtWebService;
 import com.linsir.saas.modules.system.service.SysTenantService;
-import com.linsir.saas.modules.system.vo.SysTenantVO;
-import io.prometheus.client.Summary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * description:
@@ -26,7 +18,7 @@ import java.util.List;
  * ******************************************************
  *
  * @author: linsir
- * @version: 0.0.1  *
+ * @version: 1.2.0  *
  * @date: 2023/4/13 21:20
  */
 
@@ -81,31 +73,10 @@ public class SysTenantV2Controller extends BaseCrudRestController<SysTenant> {
         return result;
     }*/
 
-    /** 
-    * @Description: 删除租户
-    * @Param: com.linsir.core.vo.IResult 
-    * @return: [id] 
-    * @Author: linsir
-    * @Date: 2:54 2023/4/22 
-    */ 
-   /* @GetMapping("del/{id}")
-    public R del(@PathVariable("id") Long id) throws Exception {
-        R result = null;
-        result = exec("删除租户",()->{
-            boolean res = sysTenantService.deleteEntity(id);
-            return Result.SUCCESS(res);
-        });
-        return result;
-    }*/
+
 
     
-    /** 
-    * @Description:  
-    * @Param: com.linsir.core.vo.IResult 
-    * @return: [id] 
-    * @Author: linsir
-    * @Date: 2:53 2023/4/22 
-    */ 
+
     /*@GetMapping("get/{id}")
     public R get(@PathVariable("id") Long id) throws Exception {
         R result = null;

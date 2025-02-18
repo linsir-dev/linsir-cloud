@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.linsir.saas.modules.system.entity.SysAuthClient;
+import com.linsir.SaaS.modules.system.entity.SysAuthClient;
 
 /**
  * @author Administrator

@@ -1,94 +1,89 @@
 package com.linsir.saas.modules.system.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-
-import com.linsir.saas.modules.system.entity.SysTenant;
-import com.linsir.saas.modules.system.entity.SysTenantExtWeb;
-import com.linsir.saas.modules.system.service.SysTenantExtWebService;
+import com.linsir.SaaS.modules.dto.system.SysTenantDTO;
+import com.linsir.SaaS.modules.system.vo.SysTenantVO;
+import com.linsir.core.constant.TypeConstant;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
+import com.linsir.core.mybatis.vo.JsonResult;
+import com.linsir.core.mybatis.vo.Pagination;
+import com.linsir.core.results.R;
+import com.linsir.SaaS.modules.system.entity.SysTenant;
 import com.linsir.saas.modules.system.service.SysTenantService;
-import com.linsir.saas.modules.system.vo.SysTenantVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 /**
  * @author admin
- * @version 1.0.0
+ * @version 1.2.0
  * @ClassName SysTenantController.java
- * @Description TODO
+ * @Description 合并 sysTenant
  * @createTime 2022年07月18日 17:57:00
+ *
+ * by linsir 2025 / 2 /18
  */
 @RestController
-@RequestMapping("/v1/sysTenant/")
-public class SysTenantController /*extends BaseCrudRestController<SysTenant>*/ {
+@RequestMapping("/sysTenant/")
+public class SysTenantController extends BaseCrudRestController<SysTenant> {
+
+    /*------------------系统日志类型---------------------*/
+    /*系统日志类型： 登录*/
+    /*public static final int LOG_TYPE_1 = 1;
+
+    *//*系统日志类型： 操作*//*
+    public static final int LOG_TYPE_2 = 2;
+
+    *//*操作日志类型： 查询*//*
+    public static final int LOG_TYPE_3 = 3;
+
+    *//*操作日志类型： 添加*//*
+    public static final int LOG_TYPE_4 = 4;
+
+    *//*操作日志类型： 更新*//*
+    public static final int LOG_TYPE_5 = 5;
+
+    *//*操作日志类型： 删除*//*
+    public static final int LOG_TYPE_6 = 6;
+
+    *//*操作日志类型： 倒入*//*
+    public static final int LOG_TYPE_7 = 7;
+
+    *//*操作日志类型： 导出*//*
+    public static final int LOG_TYPE_8 = 8;*/
 
     @Autowired
     private SysTenantService sysTenantService;
 
-    @Autowired
-    private SysTenantExtWebService sysTenantExtWebService;
-
-
     /**
-     * 租户列表信息
      *
-     * @return
+     * @Description: 添加租户
+     * @Param: [sysTenant]
+     * @return: com.linsir.core.vo.jsonResults.ResResult
+     * @Author: linsir
+     * @Date: 2022/9/23 0:55
      */
-    /*@OperationLog(bizId = "'sys_tenant-001'",bizType = "'list'",msg = "'列表查询'")
-    @RequestMapping(value = "list",method = {RequestMethod.GET})
-    public ResResult list(SysTenantDto sysTenantDto, int page,int pageSize) throws Exception {
-        R result = null;
-        QueryWrapper queryWrapper = buildQueryWrapperByDTO(sysTenantDto);
-        Pagination pagination = new Pagination(SysTenantVO.class);
-        pagination.setPageIndex(page);
-        pagination.setPageSize(pageSize);
-        Summary summary = new Summary("11","xx");
-             result = exec("租户信息列表查询",()->{
-           List<SysTenantVO> sysTenantList = sysTenantService.getViewObjectList(queryWrapper,pagination,SysTenantVO.class);
-           PageVO<SysTenantVO,Summary> pageVO = new PageVO<>(pagination,sysTenantList);
-           return Result.SUCCESS(pageVO);
-        });
-       return new ResResult<>(result);
-    }*/
-
-
-    /***
-    * @Description: 添加租户
-    * @Param: [sysTenant]
-    * @return: com.linsir.core.vo.jsonResults.ResResult
-    * @Author: linsir
-    * @Date: 2022/9/23 0:55
-    */
-    /*@OperationLog(bizId = "#tenant.tenantCode",bizType = "'add'",msg = "'租户'+ #tenant + '添加'")
     @PostMapping("add")
-    public ResResult add(SysTenant tenant) throws Exception {
-        R result = null;
-        result = exec("添加租户",()->{
-            sysTenantService.createEntity(tenant);
-            System.out.println(tenant.getId());
-            return Result.SUCCESS();
+    public R add(@RequestBody SysTenant sysTenant) {
+       return exec(TypeConstant.LOG_TYPE_4,()->{
+             sysTenant.setTenantCode(sysTenantService.generateCode());
+            return createEntity(sysTenant);
         });
-        return new ResResult<>(result);
-    }*/
+    }
 
     /**
-     * @Author linsir
-     * @Description 删除租户
-     * @Date 14:04 2022/9/23
-     * @Param [tenantId]
-     * @return com.linsir.core.vo.jsonResults.ResResult
-     **/
-    /*@OperationLog(bizId = "#tenantId",bizType = "'del'",msg = "'删除租户'+#tenantId")
-    @DeleteMapping("del")
-    public ResResult del(Long tenantId) throws Exception {
-        R result = null;
-        result = exec("删除租户",()->{
-            sysTenantService.deleteEntity(tenantId);
-            return Result.SUCCESS();
+     * @Description: 删除租户
+     * @Param: com.linsir.core.vo.IResult
+     * @return: [id]
+     * @Author: linsir
+     * @Date: 2:54 2023/4/22
+     */
+    @DeleteMapping("del/{id}")
+    public R del(@PathVariable("id") Long id) throws Exception {
+        return exec(TypeConstant.LOG_TYPE_6,()->{
+           return deleteEntity(id);
         });
-        return  new ResResult<>(result);
-    }*/
+    }
 
     /**
      * @Author linsir
@@ -97,21 +92,13 @@ public class SysTenantController /*extends BaseCrudRestController<SysTenant>*/ {
      * @Param [sysTenant]
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
-
-    /*@OperationLog(bizId = "#sysTenant.id",bizType = "'edit'",msg = "'租户'+ #sysTenant + '修改'")
-    @PostMapping("edit")
-    public ResResult edit(SysTenant sysTenant) throws Exception {
-        R result = null;
-        result = exec("编辑租户信息",()->{
-            if(sysTenantService.updateEntity(sysTenant))
-            {
-                return Result.SUCCESS();}
-            else {
-                return Result.FAIL_EXCEPTION("更新不成功");
-            }
+    @PostMapping("update")
+    public R update(@RequestBody SysTenant sysTenant) {
+        return exec(TypeConstant.LOG_TYPE_5,()->{
+            return updateEntity(sysTenant.getId(),sysTenant);
         });
-        return new ResResult(result);
-    }*/
+    }
+
 
     /**
      * @Author linsir
@@ -120,34 +107,80 @@ public class SysTenantController /*extends BaseCrudRestController<SysTenant>*/ {
      * @Param [sysTenantId]
      * @return com.linsir.core.vo.jsonResults.ResResult
      **/
-   /* @OperationLog(bizId = "#sysTenantId",bizType = "get",msg = "'获取租户信息'")
-    @GetMapping("get")
-    public ResResult get(Long sysTenantId) throws Exception {
-        R result = null;
-        result = exec("获取租户信息",()->{
-            SysTenantVO sysTenantVO = sysTenantService.getViewObject(sysTenantId,SysTenantVO.class);
-            return Result.SUCCESS(sysTenantVO);
+    @GetMapping("get/{id}")
+    public R get(@PathVariable("id") Long id )
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            return JsonResult.OK(getEntity(id));
         });
-           return new ResResult(result);
-    }*/
+    }
 
-    /***
-    * @Description: 编辑web扩展信息
-    * @Param: []
-    * @return: com.linsir.core.vo.jsonResults.ResResult
-    * @Author: linsir
-    * @Date: 2022/10/2 9:57
-    */
-   /* @OperationLog(bizId = "#sysTenantId",bizType = "editExtWeb",msg = "'扩展租户的web信息'")
-    @PostMapping("editExtWeb")
-    public ResResult editExtWeb(Long sysTenantId,SysTenantExtWeb sysTenantExtWeb) throws Exception {
-        R result = null;
-        result =exec("添加web扩展信息",()->{
-            sysTenantExtWebService.editExtWeb(sysTenantId,sysTenantExtWeb);
-            return  Result.SUCCESS();
+    /**
+     * @Description:
+     * @Param: com.linsir.core.vo.IResult
+     * @return: [id]
+     * @Author: linsir
+     * @Date: 2:53 2023/4/22
+     */
+    @GetMapping("getVO/{id}")
+    public R getVO(@PathVariable("id") Long id)
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            return getViewObject(id, SysTenantVO.class);
         });
-       return  new ResResult(result);
-    }*/
+    }
+
+    /**
+     * 租户列表信息
+     * @param sysTenant
+     * @param page
+     * @param pageSize
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("list")
+    public R list(SysTenant sysTenant, @RequestParam(value = "page") int page, @RequestParam(value = "pageSize") int pageSize)
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            QueryWrapper<SysTenant> sysTenantQueryWrapper = buildQueryWrapperByDTO(sysTenant);
+            Pagination pagination  = new Pagination();
+            pagination.setPageIndex(page);
+            pagination.setPageSize(pageSize);
+            return getEntityListWithPaging(sysTenantQueryWrapper, pagination);
+        });
+    }
+
+
+    /**
+     *
+     * @param sysTenantDTO
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @GetMapping("listVO")
+    public R listVO(SysTenantDTO sysTenantDTO, @RequestParam(value = "page") int page, @RequestParam(value = "pageSize") int pageSize)
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            Pagination pagination  = new Pagination();
+            pagination.setPageIndex(page);
+            pagination.setPageSize(pageSize);
+           return getViewObjectList(sysTenantDTO,pagination,SysTenantVO.class);
+        });
+    }
+
+    /**
+     * 通过租户code获取租户信息
+     * @param tenantCode
+     * @return
+     */
+    @GetMapping("getByTenantCode")
+    public R getByTenantCode(String tenantCode) {
+        return exec(TypeConstant.LOG_TYPE_6,()->{
+            QueryWrapper<SysTenant> queryWrapper = new QueryWrapper<SysTenant>().eq("tenant_code", tenantCode);
+          return  JsonResult.OK(getService().getViewObject(queryWrapper,SysTenantVO.class));
+        });
+    }
 
     /**
      * @Author linsir

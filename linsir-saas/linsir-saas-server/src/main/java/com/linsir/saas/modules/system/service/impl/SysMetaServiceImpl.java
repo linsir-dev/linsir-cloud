@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.service.impl;
 
 import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
-import com.linsir.saas.modules.system.entity.SysMeta;
+import com.linsir.SaaS.modules.system.entity.SysMeta;
 import com.linsir.saas.modules.system.mapper.SysMetaMapper;
 import com.linsir.saas.modules.system.service.SysMetaService;
 import org.springframework.stereotype.Service;

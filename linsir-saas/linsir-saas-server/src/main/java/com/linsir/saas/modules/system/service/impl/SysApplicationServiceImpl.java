@@ -2,12 +2,11 @@ package com.linsir.saas.modules.system.service.impl;
 
 
 import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
-import com.linsir.saas.modules.system.entity.SysApplication;
+import com.linsir.SaaS.modules.system.entity.SysApplication;
 import com.linsir.saas.modules.system.mapper.SysApplicationMapper;
 import com.linsir.saas.modules.system.service.SysApplicationService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

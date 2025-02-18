@@ -5,7 +5,7 @@ import com.linsir.core.mybatis.binding.annotation.BindCount;
 import com.linsir.core.mybatis.binding.annotation.BindEntityList;
 import com.linsir.saas.modules.auth.entity.Role;
 import com.linsir.saas.modules.auth.entity.RoleResource;
-import com.linsir.saas.modules.system.entity.SysResource;
+import com.linsir.SaaS.modules.system.entity.SysResource;
 import lombok.Data;
 
 import java.util.List;

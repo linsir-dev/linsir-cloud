@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.service;
 
 import com.linsir.core.mybatis.service.BaseService;
-import com.linsir.saas.modules.system.entity.SysTenantExtWeb;
+import com.linsir.SaaS.modules.system.entity.SysTenantExtWeb;
 
 /**
  * @author ：linsir

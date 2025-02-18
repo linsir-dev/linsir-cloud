@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>linsir-auth-server</module>
+        <module>linsir-auth-api</module>
     </modules>
 
     <distributionManagement>

@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.linsir</groupId>
+        <artifactId>linsir-auth</artifactId>
+        <version>1.2.0</version>
+    </parent>
+
+    <artifactId>linsir-auth-api</artifactId>
+    <packaging>jar</packaging>
+
+    <name>linsir-auth-api</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.linsir</groupId>
+            <artifactId>linsir-core-launch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.linsir</groupId>
+            <artifactId>linsir-core-cloud</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.linsir</groupId>
+            <artifactId>linsir-core-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.linsir</groupId>
+            <artifactId>linsir-core-db</artifactId>
+        </dependency>
+    </dependencies>
+</project>

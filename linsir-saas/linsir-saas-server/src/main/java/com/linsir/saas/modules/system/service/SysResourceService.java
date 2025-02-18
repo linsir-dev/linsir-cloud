@@ -3,9 +3,9 @@ package com.linsir.saas.modules.system.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.core.mybatis.vo.Pagination;
-import com.linsir.saas.modules.system.entity.SysResource;
-import com.linsir.saas.modules.system.vo.MenuVO;
-import com.linsir.saas.modules.system.vo.SysResourceVO;
+import com.linsir.SaaS.modules.system.entity.SysResource;
+import com.linsir.SaaS.modules.system.vo.MenuVO;
+import com.linsir.SaaS.modules.system.vo.SysResourceVO;
 
 import java.util.List;
 

@@ -1,13 +1,9 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;
-import com.linsir.saas.modules.system.entity.SysProject;
+import com.linsir.SaaS.modules.system.entity.SysProject;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * description:

@@ -1,10 +1,6 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.linsir.SaaS.api.vo.MockTokenVO;
-import com.linsir.SaaS.api.vo.MockUserInfoVO;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 /**
  * @author admin

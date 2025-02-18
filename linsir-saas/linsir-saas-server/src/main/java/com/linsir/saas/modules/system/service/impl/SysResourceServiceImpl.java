@@ -6,11 +6,11 @@ import com.linsir.core.mybatis.binding.Binder;
 import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.core.mybatis.util.BeanUtils;
 import com.linsir.core.mybatis.vo.Pagination;
-import com.linsir.saas.modules.system.entity.SysResource;
+import com.linsir.SaaS.modules.system.entity.SysResource;
 import com.linsir.saas.modules.system.mapper.SysResourceMapper;
 import com.linsir.saas.modules.system.service.SysResourceService;
-import com.linsir.saas.modules.system.vo.MenuVO;
-import com.linsir.saas.modules.system.vo.SysResourceVO;
+import com.linsir.SaaS.modules.system.vo.MenuVO;
+import com.linsir.SaaS.modules.system.vo.SysResourceVO;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

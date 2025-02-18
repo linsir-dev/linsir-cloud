@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.system.mapper;
 
 import com.linsir.core.mybatis.mapper.BaseCrudMapper;
-import com.linsir.saas.modules.system.entity.SysMeta;
+import com.linsir.SaaS.modules.system.entity.SysMeta;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
