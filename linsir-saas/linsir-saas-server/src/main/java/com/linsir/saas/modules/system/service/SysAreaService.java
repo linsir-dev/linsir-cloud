@@ -1,8 +1,11 @@
 package com.linsir.saas.modules.system.service;
 
+import com.linsir.SaaS.modules.system.vo.SysAreaVO;
 import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.SaaS.modules.system.entity.SysArea;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * description:
@@ -13,4 +16,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface SysAreaService  extends BaseService<SysArea> {
+
+    List<SysAreaVO> getAreaTree(Long parentId);
+
 }

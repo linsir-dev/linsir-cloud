@@ -26,8 +26,6 @@ public class SysBaseCountry extends BaseEntity<Long> {
 
    private int continent;
 
-   private boolean deleteMark;
-
    private boolean enabled;
 
    private String description;
