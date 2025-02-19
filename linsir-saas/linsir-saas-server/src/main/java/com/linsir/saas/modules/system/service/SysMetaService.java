@@ -1,5 +1,6 @@
 package com.linsir.saas.modules.system.service;
 
+import com.linsir.SaaS.modules.system.entity.SysResource;
 import com.linsir.core.mybatis.service.BaseService;
 import com.linsir.SaaS.modules.system.entity.SysMeta;
 
@@ -11,4 +12,6 @@ import com.linsir.SaaS.modules.system.entity.SysMeta;
  * @date 2022/08/31 16:24:21
  */
 public interface SysMetaService extends BaseService<SysMeta> {
+
+    boolean createEntityAndRelatedEntity(SysMeta sysMeta, SysResource sysResource);
 }

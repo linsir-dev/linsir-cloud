@@ -27,7 +27,7 @@ public class SysApplicationController extends BaseCrudRestController<SysApplicat
     private SysApplicationServiceImpl sysApplicationService;
 
     @PostMapping("add")
-    public R add(@RequestBody SysApplication sysApplication) {
+    public R add(SysApplication sysApplication) {
         return exec(TypeConstant.LOG_TYPE_4,()->{
             return createEntity(sysApplication);
         });

@@ -21,7 +21,11 @@ public class SysResource extends BaseTreeEntity<Long> {
 
     private String path;
 
+    private String redirect;
+
     private Long appId;
+
+    private Long projectId;
 
     private Long metaId;
 
@@ -30,5 +34,7 @@ public class SysResource extends BaseTreeEntity<Long> {
     private String component;
 
     private int sort;
+
+    private String perm;
 
 }

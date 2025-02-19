@@ -22,8 +22,13 @@ import org.springframework.web.bind.annotation.*;
 public class SysProjectController extends BaseCrudRestController<SysProject> {
 
 
+    /**
+     * 基于 App添加项目
+     * @param sysProject
+     * @return
+     */
     @PostMapping("add")
-    public R add(@RequestBody SysProject sysProject) {
+    public R add(SysProject sysProject) {
         return exec(TypeConstant.LOG_TYPE_4,()->{
             return createEntity(sysProject);
         });

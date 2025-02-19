@@ -20,4 +20,6 @@ public class SysProject extends BaseEntity<Long> {
 
     private String intro;
 
+    private Long appId;
+
 }

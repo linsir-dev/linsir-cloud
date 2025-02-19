@@ -2,15 +2,18 @@ package com.linsir.saas.modules.system.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
+import com.linsir.SaaS.modules.system.entity.SysProject;
 import com.linsir.core.mybatis.binding.Binder;
 import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import com.linsir.core.mybatis.util.BeanUtils;
 import com.linsir.core.mybatis.vo.Pagination;
 import com.linsir.SaaS.modules.system.entity.SysResource;
 import com.linsir.saas.modules.system.mapper.SysResourceMapper;
+import com.linsir.saas.modules.system.service.SysProjectService;
 import com.linsir.saas.modules.system.service.SysResourceService;
 import com.linsir.SaaS.modules.system.vo.MenuVO;
 import com.linsir.SaaS.modules.system.vo.SysResourceVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,6 +29,8 @@ import java.util.List;
 @Service
 public class SysResourceServiceImpl extends BaseServiceImpl<SysResourceMapper, SysResource> implements SysResourceService {
 
+    @Autowired
+    private SysProjectService sysProjectService;
     /**
      * 获取资源列表
      * @param queryWrapper
@@ -60,6 +65,27 @@ public class SysResourceServiceImpl extends BaseServiceImpl<SysResourceMapper, S
         stringList.add("list.delete");
         menuVO.setPermissions(stringList);
         return menuVO;
+    }
+
+    /**
+     * TODO
+     * @description:
+     * @date: 2025/2/20 6:34
+     * @Auther: linsir
+     */
+    @Override
+    public List<SysResourceVO> getProjectResource(Long projectId) {
+        SysProject sysProject = sysProjectService.getEntity(projectId);
+        QueryWrapper<SysResource> queryWrapper = new QueryWrapper<SysResource>();
+        queryWrapper.eq("app_id", sysProject.getAppId())
+                .eq("project_id", sysProject.getId())
+                .or()
+                .isNull("project_id");
+        queryWrapper.orderByAsc("sort");
+        List<SysResource> sysResourceList = getEntityList(queryWrapper);
+        List<SysResourceVO> sysResourceVOList = Binder.convertAndBindRelations(sysResourceList,SysResourceVO.class);
+        sysResourceVOList = BeanUtils.buildTree(sysResourceVOList);
+        return sysResourceVOList;
     }
 
 }

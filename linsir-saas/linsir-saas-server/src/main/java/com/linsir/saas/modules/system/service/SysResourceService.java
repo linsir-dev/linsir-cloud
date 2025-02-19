@@ -22,4 +22,5 @@ public interface SysResourceService extends BaseService<SysResource> {
 
     MenuVO getByUser(Long userId);
 
+    List<SysResourceVO> getProjectResource(Long projectId);
 }
