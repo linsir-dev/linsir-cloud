@@ -2,6 +2,7 @@ package com.linsir.SaaS.modules.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.linsir.core.mybatis.entity.BaseEntity;
+import com.linsir.core.mybatis.entity.BaseTreeEntity;
 import lombok.Data;
 
 /**
@@ -13,13 +14,11 @@ import lombok.Data;
  */
 @Data
 @TableName("sys_base_area")
-public class SysBaseArea extends BaseEntity<Long> {
+public class SysBaseArea extends BaseTreeEntity<Long> {
 
     private Long countryId;
 
     private String path;
-
-    private String parentId;
 
     private String areaCode;
 
@@ -31,8 +30,6 @@ public class SysBaseArea extends BaseEntity<Long> {
     private String layer;
 
     private String sortCode;
-
-    private boolean deleteMark;
 
     private boolean enabled;
 

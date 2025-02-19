@@ -1,9 +1,15 @@
 package com.linsir.saas.modules.system.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.linsir.core.constant.TypeConstant;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.SaaS.modules.system.entity.SysBaseArea;
+import com.linsir.core.mybatis.vo.JsonResult;
+import com.linsir.core.results.R;
 import com.linsir.saas.modules.system.service.impl.SysBaseAreaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,49 +22,66 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/v1/sysBaseArea/")
+@RequestMapping("/sysBaseArea/")
 public class SysBaseAreaController extends BaseCrudRestController<SysBaseArea> {
 
     @Autowired
     private SysBaseAreaServiceImpl sysBaseAreaService;
 
-   /* @GetMapping("list")
-    public ResResult list(SysBaseAreaDto sysBaseAreaDto, int page, int pageSize) throws Exception {
 
-        R result=null;
-
-        QueryWrapper queryWrapper = buildQueryWrapperByDTO(sysBaseAreaDto);
-        Pagination pagination = new Pagination(SysBaseArea.class);
-        pagination.setPageIndex(page);
-        pagination.setPageSize(pageSize);
-        Summary summary = new Summary("11","xx");
-        result = exec("基础区域",()->{
-         List<SysBaseAreaVO> sysBaseAreaVOList = sysBaseAreaService.getViewObjectList(queryWrapper,pagination, SysBaseAreaVO.class);
-         PageVO<SysBaseAreaVO,Summary> pageVO = new PageVO<>(pagination,sysBaseAreaVOList);
-            return Result.SUCCESS(pageVO);
-
+    @GetMapping("get/{id}")
+    public R get(@PathVariable("id") Long id )
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            return JsonResult.OK(getEntity(id));
         });
-        return new ResResult<>(result);
-    }*/
+    }
 
+
+    @GetMapping("getByCountry")
+    public R getByCountry(Long country) {
+
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            QueryWrapper<SysBaseArea> queryWrapper = new QueryWrapper<SysBaseArea>();
+            queryWrapper.eq("country_id", country);
+            return getEntityList(queryWrapper);
+        });
+    }
 
     /**
-     * 根据国家获取 区域的级联 顶级分类
-     * @param
+     * 获取 省或直辖市 特别区
      * @return
      */
-    /*@GetMapping("labelList")
-    public ResResult labelList(Long countryId,Long parentId) throws Exception {
-       R result = null;
-       QueryWrapper queryWrapper = new QueryWrapper();
-       queryWrapper.eq("country_id",countryId);
-       queryWrapper.eq("parent_id",parentId);
-       result = exec("根据国家获取 区域的级联",()->{
-           List<SysBaseArea> sysBaseAreaList =  sysBaseAreaService.getEntityList(queryWrapper);
-           List<SysBaseAreaVO> sysBaseAreaVOList = BeanUtils.convertList(sysBaseAreaList,SysBaseAreaVO.class);
-           //sysBaseAreaVOList=BeanUtils.buildTreeChildren(parentId,sysBaseAreaVOList, "parentId","children");
-           return  Result.SUCCESS(sysBaseAreaVOList);
-       });
-       return new ResResult(result);
-    }*/
+    @GetMapping("getChinaProvince")
+    public R getChinaProvince()
+    {
+
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            QueryWrapper<SysBaseArea> queryWrapper = new QueryWrapper<SysBaseArea>();
+            queryWrapper.eq("country_id", "156")
+                    .eq("parent_id",0);
+            return getEntityList(queryWrapper);
+        });
+    }
+
+    /**
+     *  多级查询
+     * 湖北省 420000
+     * 武汉市 420100
+     * 江岸区 420102
+     * @description: getChinaArea
+     * @date: 2025/2/20 1:02
+     * @Auther: linsir
+     */
+    @GetMapping("getChinaArea")
+    public  R getChinaArea(String parentId)
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            QueryWrapper<SysBaseArea> queryWrapper = new QueryWrapper<SysBaseArea>();
+            queryWrapper.eq("country_id", "156")
+                    .eq("parent_id", parentId);
+            return getEntityList(queryWrapper);
+        });
+    }
+
 }
