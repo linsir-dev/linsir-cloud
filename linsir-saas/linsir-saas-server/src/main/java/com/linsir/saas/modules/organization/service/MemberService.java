@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.organization.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.linsir.saas.modules.organization.entity.Member;
+import com.linsir.SaaS.modules.organization.entity.Member;
 /*
 import com.linsir.saas.server.entity.organization.Member;
 */

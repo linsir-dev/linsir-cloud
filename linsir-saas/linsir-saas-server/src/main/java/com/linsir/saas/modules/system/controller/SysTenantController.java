@@ -1,8 +1,7 @@
 package com.linsir.saas.modules.system.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.linsir.SaaS.modules.dto.system.SysTenantDTO;
+import com.linsir.SaaS.modules.system.dto.SysTenantDTO;
 import com.linsir.SaaS.modules.system.vo.SysTenantVO;
 import com.linsir.core.constant.TypeConstant;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;

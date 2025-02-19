@@ -1,7 +1,7 @@
 package com.linsir.saas.modules.organization.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.linsir.saas.modules.organization.entity.Member;
+import com.linsir.SaaS.modules.organization.entity.Member;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

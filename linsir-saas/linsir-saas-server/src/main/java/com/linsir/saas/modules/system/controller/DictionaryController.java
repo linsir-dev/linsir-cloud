@@ -1,11 +1,14 @@
 package com.linsir.saas.modules.system.controller;
 
+import com.linsir.SaaS.modules.system.entity.SysTenant;
+import com.linsir.core.constant.TypeConstant;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import com.linsir.core.mybatis.entity.Dictionary;
+import com.linsir.core.mybatis.service.impl.DictionaryServiceExtImpl;
+import com.linsir.core.mybatis.vo.JsonResult;
 import com.linsir.core.results.R;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * description:
@@ -18,72 +21,64 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/dictionary/")
 public class DictionaryController extends BaseCrudRestController<Dictionary> {
 
-    /*@Autowired
-    private DictionaryServiceExtImpl dictionaryService;*/
+    @Autowired
+    private DictionaryServiceExtImpl dictionaryServiceExt;
+
 
     /**
-     * 最高级别的字段列表
+     * 这里需要调用
+     * @param dictionary
      * @return
      */
-    @GetMapping("highestList")
-    public R highestList() throws Exception {
-       /* R result=null;
-        QueryWrapper<Dictionary> dictionaryQueryWrapper = new QueryWrapper<>();
-        dictionaryQueryWrapper.eq("parent_id",0);
-       result = exec("获取最高级别字典列表",()->{
-          List<Dictionary> dictionaryList = dictionaryService.list(dictionaryQueryWrapper);
-          FilterDataVO filterDataVO = new FilterDataVO();
-          filterDataVO =dictionaryService.conversionFilterDataVO("字典分裂","type",true,dictionaryList);
-          List<FilterDataVO> filterDataVOList = new ArrayList<>();
-          filterDataVOList.add(filterDataVO);
-           return Result.SUCCESS(filterDataVOList);
+    @PostMapping("add")
+    public R add(Dictionary dictionary) {
+        return exec(TypeConstant.LOG_TYPE_4,()->{
+            return JsonResult.OK(dictionaryServiceExt.createEntity(dictionary));
         });
-        return new ResResult<>(result);*/
-        return null;
     }
 
-    /**
-     * 类型列表
-     * @return
-     */
-   /* @GetMapping("typeTree")
-    public ResResult typeTree() throws Exception {
-        R result=null;
-        QueryWrapper<Dictionary> dictionaryQueryWrapper = new QueryWrapper<>();
-        dictionaryQueryWrapper.isNull("item_value");
-        result = exec ("类型列表",()->{
-            List<Dictionary> dictionaryList = dictionaryService.list(dictionaryQueryWrapper);
-            List<TypeDictionaryVO> typeDictionaryVOList = BeanUtils.convertList(dictionaryList, TypeDictionaryVO.class);
-
-            typeDictionaryVOList.stream().forEach( typeDictionaryVO -> {
-                typeDictionaryVO.setLabel(typeDictionaryVO.getItemName());
-            });
-            typeDictionaryVOList = BeanUtils.buildTree(typeDictionaryVOList);
-            return Result.SUCCESS(typeDictionaryVOList);
+    @DeleteMapping("del/{id}")
+    public R del(@PathVariable("id") Long id)  {
+        return exec(TypeConstant.LOG_TYPE_6,()->{
+            return deleteEntity(id);
         });
-        return new ResResult<>(result);
-    }*/
+    }
+
+
+    @PostMapping("update")
+    public R update(@RequestBody Dictionary dictionary) {
+        return exec(TypeConstant.LOG_TYPE_5,()->{
+            return updateEntity(dictionary.getId(),dictionary);
+        });
+    }
+
+  /**
+   * @description: get
+   * @date: 2025/2/19 18:12
+   * @Auther: linsir
+   */
+    @GetMapping("get/{id}")
+    public R get(@PathVariable("id") Long id )
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+            return JsonResult.OK(getEntity(id));
+        });
+    }
+
 
     /**
-     * 字段列表
-     * @return
+     * 通过类型获取 字典
+     * @description: getEntityListByType
+     * @date: 2025/2/19 18:25
+     * @Auther: linsir
      */
-   /* @GetMapping("list")
-    public ResResult list(DictionaryDto dictionaryDto,int page,int pageSize) throws Exception {
-        R result = null;
-        QueryWrapper queryWrapper = buildQueryWrapperByDTO(dictionaryDto);
-        queryWrapper.isNotNull("item_value");
-        Pagination pagination = new Pagination(Dictionary.class);
-        pagination.setPageIndex(page);
-        pagination.setPageSize(pageSize);
-        Summary summary = new Summary("11","xx");
-        result = exec("租户信息列表查询",()->{
-            List<Dictionary> sysTenantList = dictionaryService.getViewObjectList(queryWrapper,pagination,Dictionary.class);
-            PageVO<Dictionary,Summary> pageVO = new PageVO<>(pagination,sysTenantList);
-
-            return Result.SUCCESS(pageVO);
+    @GetMapping("getLabelValueList")
+    public R getLabelValueList(String type)
+    {
+        return exec(TypeConstant.LOG_TYPE_3,()->{
+           return JsonResult.OK(dictionaryServiceExt.getLabelValueList(type));
         });
-        return new ResResult<>(result);
-    }*/
+    }
+
 
 }
