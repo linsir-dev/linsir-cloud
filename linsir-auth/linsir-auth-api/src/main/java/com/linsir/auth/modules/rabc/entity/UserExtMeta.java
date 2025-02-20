@@ -1,7 +1,7 @@
 package com.linsir.auth.modules.rabc.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.base.core.entity.AbstractEntity;
+import com.linsir.core.mybatis.entity.BaseModel;
 import lombok.Data;
 
 /**
@@ -17,7 +17,7 @@ import lombok.Data;
  */
 @Data
 @TableName("user_ext_meta")
-public class UserExtMeta  extends AbstractEntity<Long> {
+public class UserExtMeta  extends BaseModel {
 
 
     /*昵称*/

@@ -1,7 +1,7 @@
 package com.linsir.auth.modules.rabc.entity;
 
 /**
- * @author Administrator
+ * @author Administrator   账号主数据
  * @title: Account
  * @projectName lins
  * @description: 账号
@@ -10,23 +10,23 @@ package com.linsir.auth.modules.rabc.entity;
  */
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.base.core.entity.BaseEntity;
+import com.linsir.core.mybatis.entity.BaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("user")
-public class User extends BaseEntity {
+public class User extends BaseModel {
 
     private String account;
 
-   /* private String password;*/
+    private String password;
 
     private int type;
 
     /*过期时间*/
-   /* private String timeExpiration;
+    private String timeExpiration;
 
     private boolean isAccountNonExpired;
 
@@ -34,6 +34,6 @@ public class User extends BaseEntity {
 
     private boolean isCredentialsNonExpired;
 
-    private boolean isEnabled;*/
+    private boolean isEnabled;
 
 }

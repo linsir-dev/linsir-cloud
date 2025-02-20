@@ -1,9 +1,11 @@
 package com.linsir.auth.modules.rabc.dto;
 
-import com.linsir.base.core.binding.query.BindQuery;
-import com.linsir.base.core.binding.query.Comparison;
-import com.linsir.saas.modules.rabc.entity.UserExtMeta;
+
+import com.linsir.auth.modules.rabc.entity.UserExtMeta;
+import com.linsir.core.mybatis.binding.query.BindQuery;
+import com.linsir.core.mybatis.binding.query.Comparison;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author linsir
@@ -13,6 +15,7 @@ import lombok.Data;
  * @create 2024/8/9 22:27
  */
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class UserQueryDTO extends PageQuery{
 

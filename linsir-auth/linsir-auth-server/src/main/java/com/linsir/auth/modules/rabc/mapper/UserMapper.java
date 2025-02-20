@@ -1,8 +1,8 @@
 package com.linsir.auth.modules.rabc.mapper;
 
 
-import com.linsir.base.core.mapper.BaseCrudMapper;
-import com.linsir.saas.modules.rabc.entity.User;
+import com.linsir.auth.modules.rabc.entity.User;
+import com.linsir.core.mybatis.mapper.BaseCrudMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

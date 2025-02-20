@@ -1,8 +1,9 @@
 package com.linsir.auth.modules.rabc.controller;
 
-import com.linsir.base.core.controller.BaseCrudRestController;
-import com.linsir.saas.modules.rabc.entity.Role;
-import com.linsir.saas.modules.rabc.service.impl.RoleServiceImpl;
+
+import com.linsir.auth.modules.rabc.entity.Role;
+import com.linsir.auth.modules.rabc.service.impl.RoleServiceImpl;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

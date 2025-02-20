@@ -1,6 +1,7 @@
 package com.linsir.auth.modules.rabc.entity;
 
-import com.linsir.base.core.entity.AbstractEntity;
+
+import com.linsir.core.mybatis.entity.BaseModel;
 
 /**
  * @author linsir
@@ -11,5 +12,5 @@ import com.linsir.base.core.entity.AbstractEntity;
  */
 
 
-public class UserExtOauth2BasicUser extends AbstractEntity<Long> {
+public class UserExtOauth2BasicUser extends BaseModel {
 }

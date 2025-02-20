@@ -1,7 +1,7 @@
 package com.linsir.auth.modules.rabc.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.linsir.base.core.entity.BaseEntity;
+import com.linsir.core.mybatis.entity.BaseModel;
 import lombok.Data;
 
 /**
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @TableName("role")
-public class Role extends BaseEntity {
+public class Role extends BaseModel {
 
     private String roleName;
 

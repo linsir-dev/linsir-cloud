@@ -3,8 +3,9 @@ package com.linsir.auth.modules.rabc.service;
 
 //import com.linsir.common.mp.dto.ParameterDto;
 
-import com.linsir.base.core.service.BaseService;
-import com.linsir.saas.modules.rabc.entity.Role;
+
+import com.linsir.auth.modules.rabc.entity.Role;
+import com.linsir.core.mybatis.service.BaseService;
 
 /**
  * @author Administrator

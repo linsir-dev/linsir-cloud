@@ -3,10 +3,11 @@ package com.linsir.auth.modules.rabc.service.impl;
 /*import com.linsir.common.mp.dto.ParameterDto;
 import com.linsir.common.mp.result.RespResult;
 import com.linsir.common.mp.service.BaseServiceImpl;*/
-import com.linsir.base.core.service.impl.BaseServiceImpl;
-import com.linsir.saas.modules.rabc.entity.Role;
-import com.linsir.saas.modules.rabc.mapper.RoleMapper;
-import com.linsir.saas.modules.rabc.service.RoleService;
+
+import com.linsir.auth.modules.rabc.entity.Role;
+import com.linsir.auth.modules.rabc.mapper.RoleMapper;
+import com.linsir.auth.modules.rabc.service.RoleService;
+import com.linsir.core.mybatis.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

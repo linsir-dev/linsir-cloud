@@ -1,10 +1,12 @@
 package com.linsir.auth.modules.rabc.service;
 
 
-import com.linsir.base.core.service.BaseService;
-import com.linsir.saas.modules.rabc.dto.UserQueryDTO;
-import com.linsir.saas.modules.rabc.entity.User;
-import com.linsir.saas.modules.rabc.vo.UserVO;
+
+
+import com.linsir.auth.modules.rabc.dto.UserQueryDTO;
+import com.linsir.auth.modules.rabc.entity.User;
+import com.linsir.auth.modules.rabc.vo.UserVO;
+import com.linsir.core.mybatis.service.BaseService;
 
 import java.util.List;
 

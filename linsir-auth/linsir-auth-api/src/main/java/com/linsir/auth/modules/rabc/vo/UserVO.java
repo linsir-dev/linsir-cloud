@@ -1,12 +1,13 @@
 package com.linsir.auth.modules.rabc.vo;
 
-import com.linsir.base.core.binding.annotation.BindEntity;
-import com.linsir.base.core.binding.annotation.BindEntityList;
-import com.linsir.base.core.binding.annotation.BindFieldList;
-import com.linsir.saas.modules.rabc.entity.Role;
-import com.linsir.saas.modules.rabc.entity.User;
-import com.linsir.saas.modules.rabc.entity.UserExt;
-import com.linsir.saas.modules.rabc.entity.UserExtMeta;
+
+import com.linsir.auth.modules.rabc.entity.Role;
+import com.linsir.auth.modules.rabc.entity.User;
+import com.linsir.auth.modules.rabc.entity.UserExt;
+import com.linsir.auth.modules.rabc.entity.UserExtMeta;
+import com.linsir.core.mybatis.binding.annotation.BindEntity;
+import com.linsir.core.mybatis.binding.annotation.BindEntityList;
+import com.linsir.core.mybatis.binding.annotation.BindFieldList;
 import lombok.Data;
 
 import java.util.List;

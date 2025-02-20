@@ -1,8 +1,8 @@
 package com.linsir.auth.modules.rabc.service;
 
-import com.linsir.base.core.service.BaseService;
-import com.linsir.saas.modules.rabc.entity.UserExt;
 
+import com.linsir.auth.modules.rabc.entity.UserExt;
+import com.linsir.core.mybatis.service.BaseService;
 
 /**
  * description:

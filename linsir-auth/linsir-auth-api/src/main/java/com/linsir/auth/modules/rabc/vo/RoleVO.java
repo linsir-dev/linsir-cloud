@@ -1,9 +1,11 @@
 package com.linsir.auth.modules.rabc.vo;
 
 
-import com.linsir.base.core.binding.annotation.BindCount;
-import com.linsir.saas.modules.rabc.entity.Role;
-import com.linsir.saas.modules.rabc.entity.RoleResource;
+
+import com.linsir.auth.modules.rabc.entity.Role;
+import com.linsir.auth.modules.rabc.entity.RoleResource;
+import com.linsir.core.mybatis.binding.annotation.BindCount;
+import com.linsir.core.mybatis.binding.annotation.BindEntityList;
 import lombok.Data;
 
 

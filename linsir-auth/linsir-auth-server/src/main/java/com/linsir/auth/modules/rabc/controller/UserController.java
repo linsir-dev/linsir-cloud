@@ -1,14 +1,10 @@
 package com.linsir.auth.modules.rabc.controller;
 
 
-import com.linsir.base.core.controller.BaseCrudRestController;
-import com.linsir.base.core.vo.jsonResults.JsonResult;
-import com.linsir.base.core.vo.results.R;
-import com.linsir.logRecord.annotation.OperationLog;
-import com.linsir.saas.modules.rabc.dto.UserQueryDTO;
-import com.linsir.saas.modules.rabc.entity.User;
-import com.linsir.saas.modules.rabc.service.impl.UserServiceImpl;
-import com.linsir.saas.modules.rabc.vo.UserVO;
+
+import com.linsir.auth.modules.rabc.entity.User;
+import com.linsir.auth.modules.rabc.service.impl.UserServiceImpl;
+import com.linsir.core.mybatis.controller.BaseCrudRestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,22 +38,22 @@ public class UserController extends BaseCrudRestController<User> {
      * @return com.linsir.base.core.vo.results.R
      * @time 2024/8/10 0:58
      */
-    @OperationLog(bizId = "#id",bizType = "'get'",msg = "'租户用户'")
-    @GetMapping("get/{id}")
+   /* @OperationLog(bizId = "#id",bizType = "'get'",msg = "'租户用户'")*/
+   /* @GetMapping("get/{id}")
     public R get(@PathVariable("id") Long id) throws Exception {
         return exec("根据id的获取",()->{
            return getViewObject(id, UserVO.class);
         });
-    }
+    }*/
 
-    public R list(UserQueryDTO userQueryDTO) throws Exception {
+   /* public R list(UserQueryDTO userQueryDTO) throws Exception {
          return exec("用户列表",()->{
                     return  null;
          });
-    }
+    }*/
 
-    @OperationLog(bizId = "'getPermCode'",bizType = "'getPermCode'",msg = "'获取权限编码'")
-    @GetMapping("getPermCode")
+    /*@OperationLog(bizId = "'getPermCode'",bizType = "'getPermCode'",msg = "'获取权限编码'")*/
+   /* @GetMapping("getPermCode")
     public R getPermCode()
     {
         List<Map<Integer, List<Integer>>> maps = new ArrayList<>();
@@ -76,7 +72,7 @@ public class UserController extends BaseCrudRestController<User> {
         maps.add(map1);
         maps.add(map2);
         return JsonResult.OK(maps);
-    }
+    }*/
 
 
     /*@GetMapping("get")

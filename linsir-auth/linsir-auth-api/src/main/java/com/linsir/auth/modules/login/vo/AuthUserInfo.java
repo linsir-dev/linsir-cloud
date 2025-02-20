@@ -1,6 +1,6 @@
 package com.linsir.auth.modules.login.vo;
 
-import com.linsir.saas.modules.rabc.vo.UserVO;
+import com.linsir.auth.modules.rabc.vo.UserVO;
 import lombok.Data;
 
 import java.util.ArrayList;
