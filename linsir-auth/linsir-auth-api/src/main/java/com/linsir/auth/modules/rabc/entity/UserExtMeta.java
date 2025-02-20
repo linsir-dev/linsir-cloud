@@ -19,7 +19,6 @@ import lombok.Data;
 @TableName("user_ext_meta")
 public class UserExtMeta  extends BaseModel {
 
-
     /*昵称*/
     private String nickname;
 

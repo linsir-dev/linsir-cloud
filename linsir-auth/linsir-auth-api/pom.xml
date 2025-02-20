@@ -40,5 +40,9 @@
             <groupId>com.linsir</groupId>
             <artifactId>linsir-core-db</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.linsir</groupId>
+            <artifactId>linsir-core-auth</artifactId>
+        </dependency>
     </dependencies>
 </project>

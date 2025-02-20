@@ -4,7 +4,9 @@ package com.linsir.auth.modules.rabc.controller;
 import com.linsir.auth.modules.rabc.entity.Role;
 import com.linsir.auth.modules.rabc.service.impl.RoleServiceImpl;
 import com.linsir.core.mybatis.controller.BaseCrudRestController;
+import com.linsir.core.results.R;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,12 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
  * @version: 0.0.1
  */
 @RestController
-@RequestMapping("/v1/role/")
+@RequestMapping("/role/")
 public class RoleController extends BaseCrudRestController<Role> {
 
 
-    @Autowired
-    private RoleServiceImpl roleService;
+    @PostMapping("add")
+    public R add(Role role)
+    {
+        return exec(()->{
+            return createEntity(role);
+        });
+    }
 
     /*@GetMapping("list")
     public ResResult list(RoleDto roleDto,int page,int pageSize) throws Exception {
