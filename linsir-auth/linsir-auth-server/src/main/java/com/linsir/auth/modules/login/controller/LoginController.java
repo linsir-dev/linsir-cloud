@@ -1,6 +1,8 @@
 package com.linsir.auth.modules.login.controller;
 
 
+import cn.dev33.satoken.stp.StpUtil;
+import cn.dev33.satoken.util.SaResult;
 import com.linsir.auth.modules.login.service.CaptchaService;
 import com.linsir.auth.modules.rabc.service.UserService;
 import com.linsir.core.mybatis.controller.BaseController;
@@ -9,6 +11,7 @@ import com.linsir.core.results.R;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,7 +51,57 @@ public class LoginController extends BaseController {
      * @return
      * @throws Exception
      */
+    @PostMapping("login")
     public R login(String username, String password) throws Exception {
-            return null;
+           return exec(()->{
+              if (userService.check(username, password)) {
+                StpUtil.login(username);
+                return JsonResult.OK(StpUtil.getTokenValue());
+              } else {
+                  return JsonResult.OK(SaResult.ok("失败"));
+              }
+            });
+    }
+
+
+    /**
+     * 获取当前会话是否已经登录，返回true=已登录，false=未登录
+     * @description: isLogin
+     * @date: 2025/2/21 19:17
+     * @Auther: linsir
+     */
+    @GetMapping("isLogin")
+    public R isLogin()
+    {
+        return exec(()->{
+           return JsonResult.OK(StpUtil.isLogin());
+        });
+    }
+
+    /**
+     * // 检验当前会话是否已经登录, 如果未登录，则抛出异常：`NotLoginException`
+     * @description: checkLogin
+     * @date: 2025/2/21 18:54
+     * @Auther: linsir
+     */
+    @GetMapping("checkLogin")
+    public R checkLogin()
+    {
+       return exec(()->{
+            StpUtil.checkLogin();
+            return JsonResult.OK("已经是登陆状态");
+        });
+
+    }
+
+    /**
+     * 退出
+     */
+    @GetMapping("logout")
+    public R logout(){
+        return exec(()->{
+            StpUtil.logout();
+            return JsonResult.OK("退出");
+        });
     }
 }

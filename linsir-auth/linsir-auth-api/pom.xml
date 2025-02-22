@@ -44,5 +44,15 @@
             <groupId>com.linsir</groupId>
             <artifactId>linsir-core-auth</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-spring-boot3-starter</artifactId>
+            <version>1.39.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-oauth2</artifactId>
+            <version>1.39.0</version>
+        </dependency>
     </dependencies>
 </project>

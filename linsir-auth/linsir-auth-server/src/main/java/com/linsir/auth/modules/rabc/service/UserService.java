@@ -22,4 +22,8 @@ public interface UserService extends BaseService<User> {
     UserVO getByAccount(String account);
 
     List<UserVO> list(UserQueryDTO queryDTO);
+
+    User loadUserByUsername(String userName);
+
+    boolean check(String username, String password);
 }

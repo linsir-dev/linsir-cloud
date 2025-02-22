@@ -34,6 +34,24 @@ public class UserServiceImpl  extends BaseServiceImpl<UserMapper, User> implemen
         //return List.of();
     }
 
+    @Override
+    public User loadUserByUsername(String userName) {
+        User user = new User();
+        user.setAccount(userName);
+        user.setPassword("123456");
+        return user;
+    }
+
+    @Override
+    public boolean check(String username, String password) {
+        boolean flag = false;
+        User user = loadUserByUsername(username);
+        if(user.getPassword().equals(password)) {
+            flag = true;
+        }
+        return true;
+    }
+
 
     /**
      * 按照名称获取 用户信息
