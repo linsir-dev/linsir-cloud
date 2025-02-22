@@ -23,7 +23,6 @@ public interface UserService extends BaseService<User> {
 
     List<UserVO> list(UserQueryDTO queryDTO);
 
-    User loadUserByUsername(String userName);
+    User loadUserByUsername(String userName,String password);
 
-    boolean check(String username, String password);
 }

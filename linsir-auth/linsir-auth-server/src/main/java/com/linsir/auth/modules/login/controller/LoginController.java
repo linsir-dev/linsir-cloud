@@ -4,7 +4,9 @@ package com.linsir.auth.modules.login.controller;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
 import com.linsir.auth.modules.login.service.CaptchaService;
+import com.linsir.auth.modules.rabc.entity.User;
 import com.linsir.auth.modules.rabc.service.UserService;
+import com.linsir.core.code.ResultCode;
 import com.linsir.core.mybatis.controller.BaseController;
 import com.linsir.core.mybatis.vo.JsonResult;
 import com.linsir.core.results.R;
@@ -54,12 +56,15 @@ public class LoginController extends BaseController {
     @PostMapping("login")
     public R login(String username, String password) throws Exception {
            return exec(()->{
-              if (userService.check(username, password)) {
-                StpUtil.login(username);
-                return JsonResult.OK(StpUtil.getTokenValue());
-              } else {
-                  return JsonResult.OK(SaResult.ok("失败"));
-              }
+             User user = userService.loadUserByUsername(username,password);
+             if(user!=null){
+                 StpUtil.login(user.getId());
+                 return JsonResult.OK();
+             }
+             else
+             {
+                 return JsonResult.FAIL_NO_PERMISSION("登陆失败");
+             }
             });
     }
 

@@ -52,6 +52,10 @@ public class UserController extends BaseCrudRestController<User> {
      @PostMapping("add")
      public R add(@Validated User user) {
           return exec(()->{
+              user.setAccountNonExpired(true);
+              user.setAccountNonLocked(true);
+              user.setCredentialsNonExpired(true);
+              user.setTimeExpiration("2099-12-31");
              return createEntity(user);
           });
      }

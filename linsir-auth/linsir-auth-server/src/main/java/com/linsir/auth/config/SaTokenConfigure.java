@@ -11,6 +11,12 @@ import cn.dev33.satoken.router.SaHttpMethod;
 import cn.dev33.satoken.router.SaRouter;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
+import com.linsir.auth.modules.rabc.entity.User;
+import com.linsir.auth.modules.rabc.service.UserService;
+import com.linsir.core.mybatis.data.protect.DataEncryptHandler;
+import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -24,15 +30,25 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * version    ： v1.2.0
  * date       ：2025/2/21 10:41
  */
+@Slf4j
 @Configuration
 public class SaTokenConfigure implements WebMvcConfigurer {
+
+
+    @Resource
+    private UserService userService;
 
 
 
     public SaTokenConfigure(SaOAuth2ServerConfig saOAuth2ServerConfig) {
         saOAuth2ServerConfig.doLoginHandle = (name,pwd)->{
-            StpUtil.login("1001");
-            return SaResult.ok();
+             User user = userService.loadUserByUsername(name,pwd);
+             if (user != null) {
+                 StpUtil.login(user.getId());
+                 log.info("------登陆陈国");
+                 return SaResult.ok();
+             }
+             return SaResult.error();
         };
     }
 
