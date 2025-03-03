@@ -18,4 +18,11 @@ public class GatewayController {
     public String index() {
        return "Hello World!";
     }
+
+
+    @GetMapping("notLogin")
+    public String notLogin() {
+        return "不需要登陆的";
+    }
+
 }

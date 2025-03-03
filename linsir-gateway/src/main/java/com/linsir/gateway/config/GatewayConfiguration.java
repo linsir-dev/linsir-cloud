@@ -1,10 +1,9 @@
 package com.linsir.gateway.config;
 
 
-import com.linsir.gateway.filter.GlobalRequestLogFilter;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.config.WebFluxConfigurer;
 
 /**
  * description：Gatewayconfigue
@@ -14,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @MapperScan(basePackages={"com.linsir.core.mybatis.mapper"})
-public class GatewayConfiguration {
+public class GatewayConfiguration  implements WebFluxConfigurer {
 
 
 }

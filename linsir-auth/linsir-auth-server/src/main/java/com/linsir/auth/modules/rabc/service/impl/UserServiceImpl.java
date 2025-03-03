@@ -67,6 +67,7 @@ public class UserServiceImpl  extends BaseServiceImpl<UserMapper, User> implemen
                 log.info("账号 meiy pingz");
                 throw new BusinessException("账号不存在");
             }
+            log.info(dataEncryptHandler.decrypt(user.getPassword()));
             if(password.equals(dataEncryptHandler.decrypt(user.getPassword()))){
                 return user;
             }
