@@ -2,9 +2,9 @@ package com.linsir.auth.modules.oauth2.controller;
 
 
 import cn.dev33.satoken.context.SaHolder;
-import cn.dev33.satoken.oauth2.processor.SaOAuth2ServerProcessor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import cn.dev33.satoken.oauth2.processor.SaOAuth2ServerProcessor;
 
 /**
  * description：SaOAuth2ServerController

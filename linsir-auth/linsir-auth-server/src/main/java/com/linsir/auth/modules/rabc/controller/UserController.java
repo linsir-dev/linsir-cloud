@@ -16,7 +16,6 @@ import com.linsir.core.mybatis.exception.BusinessException;
 import com.linsir.core.mybatis.vo.JsonResult;
 import com.linsir.core.mybatis.vo.Pagination;
 import com.linsir.core.results.R;
-import jakarta.activation.DataHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -77,8 +76,8 @@ public class UserController extends BaseCrudRestController<User> {
      }
 
 
-     @GetMapping("get")
-     public R get(Long id) {
+     @GetMapping("get/{id}")
+     public R get(@PathVariable("id") Long id) {
          return  exec(()->{
              return JsonResult.OK(getEntity(id));
          });

@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class LoginController extends BaseController {
+public class AuthLoginController extends BaseController {
 
     @Resource
     private CaptchaService captchaService;
@@ -107,6 +107,19 @@ public class LoginController extends BaseController {
         return exec(()->{
             StpUtil.logout();
             return JsonResult.OK("退出");
+        });
+    }
+
+
+    /**
+     * 获取 登陆id
+     * @return
+     */
+    @GetMapping
+    public R getLoginId()
+    {
+        return exec(()->{
+            return JsonResult.OK(StpUtil.getLoginIdAsLong());
         });
     }
 }

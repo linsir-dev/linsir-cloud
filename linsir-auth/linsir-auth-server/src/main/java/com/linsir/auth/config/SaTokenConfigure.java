@@ -13,14 +13,11 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
 import com.linsir.auth.modules.rabc.entity.User;
 import com.linsir.auth.modules.rabc.service.UserService;
-import com.linsir.core.mybatis.data.protect.DataEncryptHandler;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -37,8 +34,6 @@ public class SaTokenConfigure implements WebMvcConfigurer {
 
     @Resource
     private UserService userService;
-
-
 
     public SaTokenConfigure(SaOAuth2ServerConfig saOAuth2ServerConfig) {
         saOAuth2ServerConfig.doLoginHandle = (name,pwd)->{
@@ -63,9 +58,15 @@ public class SaTokenConfigure implements WebMvcConfigurer {
         config.setIsShare(true);                    // 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token，为 false 时每次登录新建一个 token）
         config.setTokenStyle("uuid");               // token 风格
         config.setIsLog(true);                     // 是否输出操作日志
-        config.setJwtSecretKey("linsir"); //配置密钥
+        //config.setJwtSecretKey("linsir"); //配置密钥
         return config;
     }
+
+
+   /* @Bean
+    public StpLogic getStpLogicJwt() {
+        return new StpLogicJwtForMixin();
+    }*/
 
     /**
      * 注册 Sa-Token 拦截器打开注解鉴权功能
